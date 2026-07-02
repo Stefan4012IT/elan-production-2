@@ -114,6 +114,21 @@ const content = {
       highlights:
         'Obezbedi svoj Elan Membership na vreme i postani deo zajednice koja kreće prva.',
       packagesLabel: 'Paketi',
+      imagePromo: {
+        kicker: 'EARLY ACCESS',
+        title: 'Treniraj sada. Zadrži svoju cenu cele godine.',
+        text: [
+          'Elan već živi svoj letnji ritam — treninzi su u toku, a prve članice imaju pristup posebnim Early Access uslovima pre zvaničnog otvaranja, 15. septembra 2026.',
+          'Paket koji izabereš sada zaključava promotivnu cenu tokom celog perioda tvoje članarine. Od 15. septembra važi zvanični cenovnik, a broj Early Access članstava je ograničen.',
+          'Obezbedi svoj Elan Membership na vreme i postani deo zajednice koja kreće prva.',
+        ],
+        benefits: [
+          'promotivna cena',
+          'ista cena cele godine',
+          'ograničen broj članstava',
+        ],
+        cta: 'Prijavi se',
+      },
       items: [
         {
           name: 'FOCUS',
@@ -352,6 +367,21 @@ const content = {
       highlights:
         'Secure your Elan Membership in time and become part of the community that starts first.',
       packagesLabel: 'Packages',
+      imagePromo: {
+        kicker: 'EARLY ACCESS',
+        title: 'Train now. Keep your price all year.',
+        text: [
+          'Elan is already moving in its summer rhythm. Training sessions are underway, and the first members have access to special Early Access terms before the official Grand Opening on September 15, 2026.',
+          'The package you choose now locks in the promotional price for the full duration of your membership. From September 15, the official price list applies, and the number of Early Access memberships is limited.',
+          'Secure your Elan Membership in time and become part of the community that starts first.',
+        ],
+        benefits: [
+          'promotional price',
+          'same price all year',
+          'limited memberships',
+        ],
+        cta: 'Apply',
+      },
       items: [
         {
           name: 'FOCUS',
@@ -911,18 +941,23 @@ export default function Home() {
           </div>
           <div className="membership__media">
             <div className="membership__image" aria-hidden="true" />
-          </div>
-        </div>
-        <div className="membership__intro">
-          <p className="section-kicker">{copy.membership.kicker}</p>
-          <h2>{copy.membership.title}</h2>
-          <div className="membership__copy">
-            {copy.membership.note ? <p>{copy.membership.note}</p> : null}
-            {copy.membership.detail ? <p>{copy.membership.detail}</p> : null}
-            {copy.membership.highlights ? <p>{copy.membership.highlights}</p> : null}
-            <a className="button button--dark" href="#apply">
-              {copy.application.cta}
-            </a>
+            <div className="membership__media-content">
+              <p className="section-kicker">{copy.membership.imagePromo.kicker}</p>
+              <h3>{copy.membership.imagePromo.title}</h3>
+              <div className="membership__media-text">
+                {copy.membership.imagePromo.text.map((item) => (
+                  <p key={item}>{item}</p>
+                ))}
+              </div>
+              <ul>
+                {copy.membership.imagePromo.benefits.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <a className="button button--dark" href="#apply">
+                {copy.membership.imagePromo.cta}
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -966,13 +1001,6 @@ export default function Home() {
             <small>{copy.bookingApp.codeLabel}</small>
           </a>
         </div>
-      </section>
-
-      <section className="membership-note section-shell">
-        <p className="section-kicker">{copy.membershipNote.kicker}</p>
-        <h2>{copy.membershipNote.title}</h2>
-        <p>{copy.membershipNote.intro}</p>
-        <p>{copy.membershipNote.text}</p>
       </section>
 
       {/* <section className="audience section-shell">
