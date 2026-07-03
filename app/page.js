@@ -242,7 +242,20 @@ const content = {
         'Hvala na interesovanju za ÉLAN. Javićemo se uskoro sa sledećim koracima.',
       successClose: 'Zatvori',
       error: 'Slanje trenutno nije uspelo.',
-      blocked: 'Slanje nije prihvaćeno.',
+    },
+    promoPopup: {
+      kicker: 'Besplatan prvi trening',
+      title: 'Upoznajte ÉLAN pristup.',
+      text: 'Prijavite se za besplatan prvi trening i zakoračite u miran, vođen i precizan način rada.',
+      name: 'Ime',
+      email: 'Email',
+      phone: 'Telefon',
+      submit: 'Prijavi se',
+      success: 'Prijava je poslata.',
+      successText: 'Hvala. Javićemo se uskoro kako bismo dogovorili prvi trening.',
+      error: 'Slanje trenutno nije uspelo.',
+      close: 'Zatvori popup',
+      focus: 'besplatan trening',
     },
     footer: {
       line: ['Women’s Private Gym', 'Focus · Discipline · Strength'],
@@ -495,7 +508,20 @@ const content = {
         'Thank you for your interest in ÉLAN. We will be in touch shortly with the next steps.',
       successClose: 'Close',
       error: 'Sending is currently unavailable.',
-      blocked: 'This submission was not accepted.',
+    },
+    promoPopup: {
+      kicker: 'Free First Session',
+      title: 'Discover the ÉLAN approach.',
+      text: 'Apply for a free first training session and step into a calm, guided and precise way of working.',
+      name: 'Name',
+      email: 'Email',
+      phone: 'Phone',
+      submit: 'Apply',
+      success: 'Your application has been sent.',
+      successText: 'Thank you. We will be in touch shortly to arrange your first session.',
+      error: 'Sending is currently unavailable.',
+      close: 'Close popup',
+      focus: 'besplatan trening',
     },
     footer: {
       line: ['Women’s Private Gym', 'Focus · Discipline · Strength'],
@@ -511,15 +537,62 @@ const content = {
   },
 };
 
+const normalizePhoneInput = (value) => {
+  const cleaned = value.replace(/[^\d+\s()./-]/g, '');
+  const withoutExtraPlus = cleaned.replace(/(?!^)\+/g, '');
+  return withoutExtraPlus.replace(/\s{2,}/g, ' ').trimStart();
+};
+
+const normalizePhoneForSubmit = (value) => value.replace(/[^\d+]/g, '');
+const honeypotFieldName = 'elan_contact_reference';
+
+const handlePhoneInputChange = (event) => {
+  event.currentTarget.value = normalizePhoneInput(event.currentTarget.value);
+};
+
+const preserveScrollPosition = () => {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  const scrollX = window.scrollX;
+  const scrollY = window.scrollY;
+  const restoreScroll = () => window.scrollTo(scrollX, scrollY);
+
+  window.requestAnimationFrame(restoreScroll);
+  window.setTimeout(restoreScroll, 0);
+  window.setTimeout(restoreScroll, 80);
+  window.setTimeout(restoreScroll, 220);
+  window.setTimeout(restoreScroll, 420);
+  window.setTimeout(restoreScroll, 700);
+};
+
+const focusFieldWithoutScroll = (event) => {
+  const field = event.target.closest('input, textarea');
+
+  if (!field || field.disabled || field.readOnly) {
+    return;
+  }
+
+  event.preventDefault();
+  field.focus({ preventScroll: true });
+  preserveScrollPosition();
+};
+
 export default function Home() {
   const [language, setLanguage] = useState('sr');
   const [activeMembership, setActiveMembership] = useState(0);
   const [activeSpaceSlide, setActiveSpaceSlide] = useState(0);
   const [submitState, setSubmitState] = useState('idle');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isPromoOpen, setIsPromoOpen] = useState(false);
+  const [promoDismissed, setPromoDismissed] = useState(false);
+  const [promoSubmitState, setPromoSubmitState] = useState('idle');
+  const [promoStartedAt, setPromoStartedAt] = useState(() => new Date().toISOString());
   const [formStartedAt] = useState(() => new Date().toISOString());
   const spaceTouchStart = useRef(null);
   const spaceTouchCurrent = useRef(null);
+  const promoCloseTimeout = useRef(null);
   const copy = content[language];
   const leadsWebAppUrl = process.env.NEXT_PUBLIC_LEADS_WEB_APP_URL;
   const assetBasePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -527,6 +600,7 @@ export default function Home() {
   const heroImage = `url('${assetBasePath}/images/elan-hero-002.png')`;
   const membershipImage = `url('${assetBasePath}/images/membership_img.png')`;
   const applicationImage = `url('${assetBasePath}/images/elan-prostor-6.png')`;
+  const promoImage = `url('${assetBasePath}/images/elan-prostor-7.png')`;
   const spaceSlides = [
     {
       src: `${assetBasePath}/images/elan-prostor-7.png`,
@@ -563,6 +637,35 @@ export default function Home() {
     }, 6000);
 
     return () => window.clearInterval(intervalId);
+  }, []);
+  useEffect(() => {
+    if (promoDismissed) {
+      return undefined;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      setPromoStartedAt(new Date().toISOString());
+      setIsPromoOpen(true);
+    }, 5000);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [promoDismissed]);
+  useEffect(() => {
+    if (!isPromoOpen) {
+      return undefined;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isPromoOpen]);
+  useEffect(() => () => {
+    if (promoCloseTimeout.current) {
+      window.clearTimeout(promoCloseTimeout.current);
+    }
   }, []);
   const shiftSpaceSlide = (direction) => {
     setActiveSpaceSlide((current) => {
@@ -626,17 +729,24 @@ export default function Home() {
 
     resetSpaceTouch();
   };
+  const closePromoPopup = () => {
+    if (promoCloseTimeout.current) {
+      window.clearTimeout(promoCloseTimeout.current);
+    }
+
+    setIsPromoOpen(false);
+    setPromoDismissed(true);
+    setPromoSubmitState('idle');
+  };
   const handleApplicationSubmit = async (event) => {
     event.preventDefault();
 
     const form = event.currentTarget;
     const formData = new FormData(form);
-    const honeypot = formData.get('website');
-    const startedAt = Date.parse(formData.get('formStartedAt'));
-    const elapsedMs = Date.now() - startedAt;
+    const honeypot = formData.get(honeypotFieldName);
 
-    if (honeypot || Number.isNaN(startedAt) || elapsedMs < 2500) {
-      setSubmitState('blocked');
+    if (honeypot) {
+      setSubmitState('error');
       return;
     }
 
@@ -645,8 +755,18 @@ export default function Home() {
       return;
     }
 
+    const normalizedPhone = normalizePhoneForSubmit(formData.get('phone') || '');
+
+    if (normalizedPhone.length < 6) {
+      setSubmitState('error');
+      return;
+    }
+
+    formData.set('phone', normalizedPhone);
     formData.set('userAgent', navigator.userAgent);
     formData.set('ip', '');
+    formData.set('pageUrl', window.location.href);
+    formData.set('submittedAt', new Date().toISOString());
     setSubmitState('sending');
 
     try {
@@ -663,6 +783,54 @@ export default function Home() {
       setSubmitState('success');
     }
   };
+  const handlePromoSubmit = async (event) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const honeypot = formData.get(honeypotFieldName);
+
+    if (honeypot) {
+      setPromoSubmitState('error');
+      return;
+    }
+
+    if (!leadsWebAppUrl) {
+      setPromoSubmitState('error');
+      return;
+    }
+
+    const normalizedPhone = normalizePhoneForSubmit(formData.get('phone') || '');
+
+    if (normalizedPhone.length < 6) {
+      setPromoSubmitState('error');
+      return;
+    }
+
+    formData.set('phone', normalizedPhone);
+    formData.set('focus', copy.promoPopup.focus);
+    formData.set('userAgent', navigator.userAgent);
+    formData.set('ip', '');
+    formData.set('pageUrl', window.location.href);
+    formData.set('submittedAt', new Date().toISOString());
+    setPromoSubmitState('sending');
+
+    try {
+      await fetch(leadsWebAppUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: new URLSearchParams(formData),
+      });
+
+      form.reset();
+      setPromoSubmitState('success');
+      promoCloseTimeout.current = window.setTimeout(closePromoPopup, 1800);
+    } catch {
+      form.reset();
+      setPromoSubmitState('success');
+      promoCloseTimeout.current = window.setTimeout(closePromoPopup, 1800);
+    }
+  };
 
   return (
     <main
@@ -671,6 +839,7 @@ export default function Home() {
         '--hero-image': heroImage,
         '--membership-image': membershipImage,
         '--application-image': applicationImage,
+        '--promo-image': promoImage,
       }}
     >
       <header className="site-header" aria-label={copy.nav.label}>
@@ -1022,14 +1191,17 @@ export default function Home() {
           <h2>{copy.application.title}</h2>
           <p>{copy.application.text}</p>
         </div>
-        <form className="application-form" onSubmit={handleApplicationSubmit}>
+        <form
+          className="application-form"
+          onSubmit={handleApplicationSubmit}
+        >
           <label className="form-field--hidden" aria-hidden="true">
-            Website
+            Reference
             <input
               type="text"
-              name="website"
+              name={honeypotFieldName}
               tabIndex="-1"
-              autoComplete="off"
+              autoComplete="new-password"
             />
           </label>
           <input type="hidden" name="formStartedAt" value={formStartedAt} />
@@ -1037,6 +1209,8 @@ export default function Home() {
           <input type="hidden" name="language" value={language} />
           <input type="hidden" name="ip" value="" />
           <input type="hidden" name="userAgent" value="" />
+          <input type="hidden" name="pageUrl" value="" />
+          <input type="hidden" name="submittedAt" value="" />
           <label>
             {copy.application.name}
             <input
@@ -1065,6 +1239,8 @@ export default function Home() {
               name="phone"
               autoComplete="tel"
               inputMode="tel"
+              pattern="[\d+\s()./-]{6,32}"
+              onChange={handlePhoneInputChange}
               minLength="6"
               maxLength="32"
               required
@@ -1088,7 +1264,6 @@ export default function Home() {
           </button>
           <p className="form-status" role="status">
             {submitState === 'error' && copy.application.error}
-            {submitState === 'blocked' && copy.application.blocked}
           </p>
         </form>
       </section>
@@ -1138,6 +1313,110 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {isPromoOpen && (
+        <div
+          className="promo-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="promo-modal-title"
+        >
+          <button
+            type="button"
+            className="promo-modal__backdrop"
+            onClick={closePromoPopup}
+            aria-label={copy.promoPopup.close}
+          />
+          <div className="promo-modal__panel">
+            <button
+              type="button"
+              className="promo-modal__close"
+              onClick={closePromoPopup}
+              aria-label={copy.promoPopup.close}
+            >
+              <span />
+              <span />
+            </button>
+            <div className="promo-modal__content">
+              <p className="section-kicker">{copy.promoPopup.title}</p>
+              <h2 id="promo-modal-title">{copy.promoPopup.kicker}</h2>
+              <p>{copy.promoPopup.text}</p>
+              {promoSubmitState === 'success' ? (
+                <div className="promo-modal__success" role="status">
+                  <p className="section-kicker">{copy.promoPopup.success}</p>
+                  <p>{copy.promoPopup.successText}</p>
+                </div>
+              ) : (
+                <form
+                  className="promo-form"
+                  onSubmit={handlePromoSubmit}
+                  onFocusCapture={preserveScrollPosition}
+                  onPointerDownCapture={focusFieldWithoutScroll}
+                >
+                  <label className="form-field--hidden" aria-hidden="true">
+                    Reference
+                    <input
+                      type="text"
+                      name={honeypotFieldName}
+                      tabIndex="-1"
+                      autoComplete="new-password"
+                    />
+                  </label>
+                  <input type="hidden" name="formStartedAt" value={promoStartedAt} />
+                  <input type="hidden" name="source" value="elan-free-training-popup" />
+                  <input type="hidden" name="focus" value={copy.promoPopup.focus} />
+                  <input type="hidden" name="language" value={language} />
+                  <input type="hidden" name="ip" value="" />
+                  <input type="hidden" name="userAgent" value="" />
+                  <input type="hidden" name="pageUrl" value="" />
+                  <input type="hidden" name="submittedAt" value="" />
+                  <label>
+                    {copy.promoPopup.name}
+                    <input
+                      type="text"
+                      name="name"
+                      autoComplete="name"
+                      minLength="2"
+                      maxLength="80"
+                      required
+                    />
+                  </label>
+                  <label>
+                    {copy.promoPopup.email}
+                    <input
+                      type="email"
+                      name="email"
+                      autoComplete="email"
+                      maxLength="120"
+                      required
+                    />
+                  </label>
+                  <label>
+                    {copy.promoPopup.phone}
+                    <input
+                      type="tel"
+                      name="phone"
+                      autoComplete="tel"
+                      inputMode="tel"
+                      pattern="[\d+\s()./-]{6,32}"
+                      onChange={handlePhoneInputChange}
+                      minLength="6"
+                      maxLength="32"
+                      required
+                    />
+                  </label>
+                  <button type="submit" disabled={promoSubmitState === 'sending'}>
+                    {copy.promoPopup.submit}
+                  </button>
+                  <p className="promo-form__status" role="status">
+                    {promoSubmitState === 'error' && copy.promoPopup.error}
+                  </p>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {submitState === 'success' && (
         <div
