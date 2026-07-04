@@ -600,7 +600,7 @@ export default function Home() {
   const heroImage = `url('${assetBasePath}/images/elan-hero-002.png')`;
   const membershipImage = `url('${assetBasePath}/images/membership_img.png')`;
   const applicationImage = `url('${assetBasePath}/images/elan-prostor-6.png')`;
-  const promoImage = `url('${assetBasePath}/images/elan-prostor-7.png')`;
+  const promoImage = `url('${assetBasePath}/images/training-concept__image_001.png')`;
   const spaceSlides = [
     {
       src: `${assetBasePath}/images/elan-prostor-7.png`,
