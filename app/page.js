@@ -131,24 +131,21 @@ const content = {
         {
           name: 'FOCUS',
           detail: '8 treninga mesečno',
-          originalPrice: '24.000 RSD',
-          price: '20.000 RSD',
+          price: '24.000 RSD',
           description:
             'Za one koje žele kontinuitet i ravnotežu između treninga i svakodnevnih obaveza.',
         },
         {
           name: 'DISCIPLINE',
           detail: '10 treninga mesečno',
-          originalPrice: '26.000 RSD',
-          price: '22.000 RSD',
+          price: '26.000 RSD',
           description:
             'Za one koje veruju da rezultati dolaze kroz doslednost i posvećen rad.',
         },
         {
           name: 'STRENGTH',
           detail: '12 treninga mesečno',
-          originalPrice: '28.000 RSD',
-          price: '24.000 RSD',
+          price: '28.000 RSD',
           description:
             'Za one koje žele maksimalnu podršku, napredak i posvećenost svojim ciljevima.',
         },
@@ -401,24 +398,21 @@ const content = {
         {
           name: 'FOCUS',
           detail: '8 sessions per month',
-          originalPrice: '24,000 RSD',
-          price: '20,000 RSD',
+          price: '24,000 RSD',
           description:
             'For those who want continuity and balance between training and everyday responsibilities.',
         },
         {
           name: 'DISCIPLINE',
           detail: '10 sessions per month',
-          originalPrice: '26,000 RSD',
-          price: '22,000 RSD',
+          price: '26,000 RSD',
           description:
             'For those who believe results come through consistency and dedicated work.',
         },
         {
           name: 'STRENGTH',
           detail: '12 sessions per month',
-          originalPrice: '28,000 RSD',
-          price: '24,000 RSD',
+          price: '28,000 RSD',
           description:
             'For those who want maximum support, progress and commitment to their goals.',
         },
