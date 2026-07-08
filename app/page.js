@@ -1139,9 +1139,6 @@ export default function Home() {
                       </div>
                       <span className="membership-row__meta">
                         <span className="membership-row__prices">
-                          {item.originalPrice ? (
-                            <span className="membership-row__price-old">{item.originalPrice}</span>
-                          ) : null}
                           <strong>{item.price}</strong>
                         </span>
                         <span className="membership-row__arrow" aria-hidden="true" />

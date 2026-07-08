@@ -1158,19 +1158,8 @@ h3 {
 
 .membership-row__prices {
   display: inline-flex;
-  flex-direction: column;
   align-items: flex-end;
-  gap: 4px;
   line-height: 1.1;
-}
-
-.membership-row__price-old {
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 500;
-  text-decoration: line-through;
-  text-decoration-thickness: 1px;
-  white-space: nowrap;
 }
 
 .membership-row__arrow {
