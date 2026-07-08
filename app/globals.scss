@@ -248,7 +248,7 @@ textarea {
   }
 
   &::before {
-    content: 'Members move in silence';
+    content: var(--header-tagline, 'Members move in silence');
     position: absolute;
     left: calc(100% + 20px);
     top: 50%;
@@ -1073,6 +1073,11 @@ h3 {
   p + p {
     margin-top: 12px;
   }
+
+  strong {
+    color: var(--white);
+    font-weight: 700;
+  }
 }
 
 .membership-packages {
@@ -1535,8 +1540,12 @@ h3 {
   align-content: start;
   width: fit-content;
   max-width: 560px;
-  padding: clamp(24px, 4vw, 36px);
   background: transparent;
+
+  strong {
+    color: var(--text);
+    font-weight: 700;
+  }
 }
 
 .application-form {
@@ -1962,6 +1971,14 @@ h3 {
     margin: 18px 0 0;
     color: rgba(251, 250, 247, 0.76);
     font-size: var(--body-copy-size);
+  }
+
+  .promo-modal__highlight {
+    max-width: 560px;
+    color: var(--white);
+    font-size: clamp(1.02rem, 1.35vw, 1.24rem);
+    font-weight: 700;
+    line-height: 1.45;
   }
 }
 

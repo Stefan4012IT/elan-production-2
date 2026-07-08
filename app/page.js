@@ -23,7 +23,7 @@ const content = {
       title: 'Drugačiji pristup treningu.',
       text: 'ÉLAN je zajednica žena koje ulažu u svoje zdravlje, snagu i kvalitet života. Prostor u kome su privatnost, kvalitet treninga i atmosfera podjednako važni kao i rezultati.',
       support:
-        'Samo pažljivo vođeni treninzi, stručna podrška i okruženje koje omogućava da se fokusirate na sebe i svoje ciljeve.',
+        'Pažljivo vođeni treninzi uz stručnu podršku u mirnom okruženju koje vam omogućava da se u potpunosti posvetite sebi i svojim ciljevima.',
       note: 'Bez gužve. Bez čekanja na sprave. Bez univerzalnih programa.',
     },
     difference: {
@@ -88,19 +88,19 @@ const content = {
     },
     trainingConcept: {
       kicker: 'KONCEPT TRENINGA',
-      title: 'Individualan pristup. Vođeni treninzi.',
-      text: 'Svako članstvo počinje konsultacijama kroz koje razumemo vaše ciljeve, iskustvo i način života. Na osnovu toga ÉLAN pristup ostaje ličan, strukturisan i usmeren na dugoročni napredak.',
-      note: 'Na taj način obezbeđujemo sigurnost, kontinuitet i napredak u skladu sa mogućnostima i ciljevima svake članice.',
+      title: 'Individualan plan. Vođeni trening.',
+      text: 'Svako članstvo počinje konsultacijama kako bismo razumeli Vaše ciljeve, trenutno stanje i mogućnosti. Na osnovu toga kreiramo plan treninga prilagođen isključivo Vama.',
+      note: 'Treninzi se odvijaju u malim grupama uz stručno vođenje trenera, dok svaka članica prati svoj individualni program. Na taj način spajamo individualan pristup sa prednostima vođenog treninga u malim grupama.',
       items: [
         {
-          kicker: 'INDIVIDUALNI PRISTUP',
-          title: 'Kreiran prema vašim ciljevima.',
-          text: 'Bez obzira da li vam je cilj povećanje snage, oblikovanje tela, gubitak telesne mase ili unapređenje kondicije, pristup ostaje individualan.',
+          kicker: 'INDIVIDUALNI PLAN',
+          title: 'Plan treninga kreiran za vas.',
+          text: 'Prilagođen vašim ciljevima, mogućnostima i tempu napretka.',
         },
         {
-          kicker: 'VOĐENI TRENINZI',
-          title: 'Svaki trening ima svrhu.',
-          text: 'Svi treninzi odvijaju se u okviru vođenih termina uz prisustvo trenera, sa jasnom strukturom, stručnim nadzorom i fokusom na kvalitetan rad.',
+          kicker: 'VOĐENI TRENING',
+          title: 'Trening koji prati vaš plan.',
+          text: 'Male grupe, stručno vođenje i individualna pažnja na svakom treningu.',
         },
       ],
     },
@@ -115,18 +115,16 @@ const content = {
         'Obezbedi svoj Elan Membership na vreme i postani deo zajednice koja kreće prva.',
       packagesLabel: 'Paketi',
       imagePromo: {
-        kicker: 'EARLY ACCESS',
+        kicker: 'RANE PRIJAVE',
         title: 'Treniraj sada. Zadrži svoju cenu cele godine.',
         text: [
-          'Elan već živi svoj letnji ritam — treninzi su u toku, a prve članice imaju pristup posebnim Early Access uslovima pre zvaničnog otvaranja, 15. septembra 2026.',
-          'Paket koji izabereš sada zaključava promotivnu cenu tokom celog perioda tvoje članarine. Od 15. septembra važi zvanični cenovnik, a broj Early Access članstava je ograničen.',
-          'Obezbedi svoj Elan Membership na vreme i postani deo zajednice koja kreće prva.',
+          'Elan već živi svoj letnji ritam — treninzi su u toku, a prve članice imaju pristup posebnim uslovima pre zvaničnog otvaranja, 15. septembra 2026.',
+          'Članstvo aktivirano u ovom periodu zadržava početnu cenu tokom celog perioda aktivne članarine. Od 15. septembra važiće novi cenovnik.',
+          'Broj članstava je ograničen kako bismo svakoj članici pružili pažnju koju zaslužuje.',
         ],
-        benefits: [
-          'promotivna cena',
-          'ista cena cele godine',
-          'ograničen broj članstava',
-        ],
+        highlight:
+          'Članstvo aktivirano u ovom periodu zadržava početnu cenu tokom celog perioda aktivne članarine.',
+        benefits: [],
         cta: 'Prijavi se',
       },
       items: [
@@ -166,12 +164,12 @@ const content = {
     earlyAccess: {
       kicker: 'Članstvo',
       title: 'Ograničen broj članica',
-      intro: 'Članstvo kreirano prema vašim ciljevima, tempu i napretku.',
+      intro: 'Verujemo da kvalitet treninga počinje kvalitetom okruženja. Kako bismo svakoj članici pružili pažnju koju zaslužuje broj članova je ograničen.',
       text:
-        'Verujemo da kvalitet treninga počinje kvalitetom okruženja i zbog toga je broj članova ograničen. Članstvo je dostupno putem prijave.',
+        'Članstvo je dostupno putem prijave.',
       note: null,
       benefits: [],
-      cta: 'Prijavi se za članstvo',
+      cta: 'Prijavi se',
     },
     space: {
       kicker: 'PROSTOR',
@@ -226,9 +224,11 @@ const content = {
         'Verujemo da kvalitet treninga počinje kvalitetom okruženja i zbog toga je broj članova ograničen. Članstvo je dostupno putem prijave.',
     },
     application: {
-      kicker: 'Prijave za članstvo',
-      title: 'Budite među prvima.',
-      text: 'Broj članica je ograničen. Prijavite se na listu zainteresovanih i budite među prvima koje će dobiti informacije o pristupu.',
+      kicker: 'PRIJAVE ZA ČLANSTVO',
+      title: 'Vaš ÉLAN počinje ovde.',
+      text: 'Svako članstvo počinje upoznavanjem.',
+      note:
+        'Podelite sa nama nekoliko osnovnih informacija, a mi ćemo vas kontaktirati kako bismo razgovarali o vašim ciljevima, predstavili ÉLAN koncept i odgovorili na sva pitanja u vezi sa članstvom.',
       name: 'Ime',
       email: 'Email',
       phone: 'Telefon',
@@ -244,9 +244,13 @@ const content = {
       error: 'Slanje trenutno nije uspelo.',
     },
     promoPopup: {
-      kicker: 'Besplatan prvi trening',
-      title: 'Upoznajte ÉLAN pristup.',
-      text: 'Prijavite se za besplatan prvi trening i zakoračite u miran, vođen i precizan način rada.',
+      kicker: 'Dobro došli u ÉLAN.',
+      title: 'Besplatan uvodni trening',
+      text: [
+        'Pre nego što postanete član, pozivamo Vas da doživite kako izgleda trening u prostoru gde je fokus isključivo na Vama.',
+        'Mirnije okruženje. Manje ljudi. Više pažnje.',
+      ],
+      highlight: 'Prijavite se za besplatan uvodni trening i upoznajte ÉLAN pristup.',
       name: 'Ime',
       email: 'Email',
       phone: 'Telefon',
@@ -289,7 +293,7 @@ const content = {
       title: 'A different kind of gym.',
       text: 'ÉLAN is a community for women who invest in their health, strength and quality of life. A space where privacy, training quality and atmosphere matter as much as results.',
       support:
-        'Only carefully guided training, professional support and an environment that allows you to focus on yourself and your goals.',
+        'Carefully guided training with professional support in a calm environment that allows you to fully devote your attention to yourself and your goals.',
       note: 'No crowding. No waiting for equipment. No generic programs.',
     },
     difference: {
@@ -354,19 +358,19 @@ const content = {
     },
     trainingConcept: {
       kicker: 'TRAINING CONCEPT',
-      title: 'Individual approach. Guided training.',
-      text: 'Every member begins with an initial consultation where we define goals, experience and individual needs. From there, a training plan is created around your pace, abilities and desired results.',
-      note: 'This keeps training safe, consistent and aligned with each member’s possibilities and goals.',
+      title: 'Individual plan. Guided training.',
+      text: 'Every membership begins with a consultation so we can understand your goals, current condition and abilities. Based on that, we create a training plan tailored exclusively to you.',
+      note: 'Training takes place in small groups with professional trainer guidance, while each member follows her individual program. This brings together an individual approach with the advantages of guided training in small groups.',
       items: [
         {
-          kicker: 'INDIVIDUAL APPROACH',
-          title: 'Designed around you.',
-          text: 'Whether your focus is strength, body composition, weight loss or conditioning, the approach remains personal and adapted to your progress.',
+          kicker: 'INDIVIDUAL PLAN',
+          title: 'A training plan created for you.',
+          text: 'Adapted to your goals, abilities and pace of progress.',
         },
         {
           kicker: 'GUIDED TRAINING',
-          title: 'Every session matters.',
-          text: 'All sessions take place in guided appointments with a trainer present, clear structure and professional supervision throughout the work.',
+          title: 'Training that follows your plan.',
+          text: 'Small groups, professional guidance and individual attention in every session.',
         },
       ],
     },
@@ -381,18 +385,16 @@ const content = {
         'Secure your Elan Membership in time and become part of the community that starts first.',
       packagesLabel: 'Packages',
       imagePromo: {
-        kicker: 'EARLY ACCESS',
+        kicker: 'EARLY APPLICATIONS',
         title: 'Train now. Keep your price all year.',
         text: [
-          'Elan is already moving in its summer rhythm. Training sessions are underway, and the first members have access to special Early Access terms before the official Grand Opening on September 15, 2026.',
-          'The package you choose now locks in the promotional price for the full duration of your membership. From September 15, the official price list applies, and the number of Early Access memberships is limited.',
-          'Secure your Elan Membership in time and become part of the community that starts first.',
+          'Elan is already moving in its summer rhythm. Training sessions are underway, and the first members have access to special terms before the official opening on September 15, 2026.',
+          'Membership activated during this period keeps its starting price for the full duration of the active membership. From September 15, a new price list will apply.',
+          'The number of memberships is limited so we can give every member the attention she deserves.',
         ],
-        benefits: [
-          'promotional price',
-          'same price all year',
-          'limited memberships',
-        ],
+        highlight:
+          'Membership activated during this period keeps its starting price for the full duration of the active membership.',
+        benefits: [],
         cta: 'Apply',
       },
       items: [
@@ -432,12 +434,12 @@ const content = {
     earlyAccess: {
       kicker: 'Membership',
       title: 'Limited Membership',
-      intro: 'Memberships designed around your goals, schedule and progress.',
+      intro: 'We believe training quality begins with the quality of the environment. To give every member the attention she deserves, the number of memberships is limited.',
       text:
-        'We believe training quality begins with the quality of the environment. That is why the number of members is limited. Membership is available by application.',
+        'Membership is available by application.',
       note: null,
       benefits: [],
-      cta: 'Apply for membership',
+      cta: 'Apply',
     },
     space: {
       kicker: 'The Space',
@@ -492,9 +494,11 @@ const content = {
         'We believe training quality begins with the quality of the environment. That is why the number of members is limited. Membership is available by application.',
     },
     application: {
-      kicker: 'Join the Waiting List',
-      title: 'Be among the first.',
-      text: 'The number of members is limited. Join the waiting list and be among the first to receive information about opening and enrolment.',
+      kicker: 'APPLICATIONS FOR MEMBERSHIP',
+      title: 'Your ÉLAN begins here.',
+      text: 'Every membership begins with an introduction.',
+      note:
+        'Share a few basic details with us, and we will contact you to discuss your goals, introduce the ÉLAN concept and answer any questions about membership.',
       name: 'Name',
       email: 'Email',
       phone: 'Phone',
@@ -510,9 +514,13 @@ const content = {
       error: 'Sending is currently unavailable.',
     },
     promoPopup: {
-      kicker: 'Free First Session',
-      title: 'Discover the ÉLAN approach.',
-      text: 'Apply for a free first training session and step into a calm, guided and precise way of working.',
+      kicker: 'Welcome to ÉLAN.',
+      title: 'Free introductory session',
+      text: [
+        'Before becoming a member, we invite you to experience what training feels like in a space where the focus is entirely on you.',
+        'A calmer environment. Fewer people. More attention.',
+      ],
+      highlight: 'Apply for a free introductory session and discover the ÉLAN approach.',
       name: 'Name',
       email: 'Email',
       phone: 'Phone',
@@ -840,6 +848,8 @@ export default function Home() {
         '--membership-image': membershipImage,
         '--application-image': applicationImage,
         '--promo-image': promoImage,
+        '--header-tagline':
+          language === 'sr' ? '"VAŠ ÉLAN POČINJE OVDE."' : '"Members move in silence"',
       }}
     >
       <header className="site-header" aria-label={copy.nav.label}>
@@ -1114,15 +1124,28 @@ export default function Home() {
               <p className="section-kicker">{copy.membership.imagePromo.kicker}</p>
               <h3>{copy.membership.imagePromo.title}</h3>
               <div className="membership__media-text">
-                {copy.membership.imagePromo.text.map((item) => (
-                  <p key={item}>{item}</p>
-                ))}
+                {copy.membership.imagePromo.text.map((item) => {
+                  const highlight = copy.membership.imagePromo.highlight;
+
+                  if (highlight && item.startsWith(highlight)) {
+                    return (
+                      <p key={item}>
+                        <strong>{highlight}</strong>
+                        {item.slice(highlight.length)}
+                      </p>
+                    );
+                  }
+
+                  return <p key={item}>{item}</p>;
+                })}
               </div>
-              <ul>
-                {copy.membership.imagePromo.benefits.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+              {copy.membership.imagePromo.benefits.length ? (
+                <ul>
+                  {copy.membership.imagePromo.benefits.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              ) : null}
               <a className="button button--dark" href="#apply">
                 {copy.membership.imagePromo.cta}
               </a>
@@ -1189,7 +1212,10 @@ export default function Home() {
         <div className="application__copy">
           <p className="section-kicker">{copy.application.kicker}</p>
           <h2>{copy.application.title}</h2>
-          <p>{copy.application.text}</p>
+          <p>
+            <strong>{copy.application.text}</strong>
+          </p>
+          {copy.application.note ? <p>{copy.application.note}</p> : null}
         </div>
         <form
           className="application-form"
@@ -1340,7 +1366,10 @@ export default function Home() {
             <div className="promo-modal__content">
               <p className="section-kicker">{copy.promoPopup.title}</p>
               <h2 id="promo-modal-title">{copy.promoPopup.kicker}</h2>
-              <p>{copy.promoPopup.text}</p>
+              {copy.promoPopup.text.map((item) => (
+                <p key={item}>{item}</p>
+              ))}
+              <p className="promo-modal__highlight">{copy.promoPopup.highlight}</p>
               {promoSubmitState === 'success' ? (
                 <div className="promo-modal__success" role="status">
                   <p className="section-kicker">{copy.promoPopup.success}</p>
