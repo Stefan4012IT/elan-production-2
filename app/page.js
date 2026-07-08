@@ -169,7 +169,7 @@ const content = {
         'Članstvo je dostupno putem prijave.',
       note: null,
       benefits: [],
-      cta: 'Prijavi se',
+      cta: 'PRIJAVI SE ZA ČLANSTVO',
     },
     space: {
       kicker: 'PROSTOR',
@@ -439,7 +439,7 @@ const content = {
         'Membership is available by application.',
       note: null,
       benefits: [],
-      cta: 'Apply',
+      cta: 'Apply for membership',
     },
     space: {
       kicker: 'The Space',
@@ -1000,6 +1000,25 @@ export default function Home() {
         </div>
       </section> */}
 
+      <section className="training-concept section-shell" id="training">
+        <div className="training-concept__image" aria-hidden="true" />
+        <div className="training-concept__content">
+          <p className="section-kicker">{copy.trainingConcept.kicker}</p>
+          <h2>{copy.trainingConcept.title}</h2>
+          <p>{copy.trainingConcept.text}</p>
+          <p>{copy.trainingConcept.note}</p>
+          <div className="training-concept__cards">
+            {copy.trainingConcept.items.map((item) => (
+              <article className="training-concept__card" key={item.title}>
+                <p>{item.kicker}</p>
+                <h3>{item.title}</h3>
+                <span>{item.text}</span>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="ease section-shell">
         <div className="ease__image ease__image--left" aria-hidden="true" />
         <div className="ease__content">
@@ -1026,22 +1045,44 @@ export default function Home() {
         <div className="ease__image ease__image--right" aria-hidden="true" />
       </section>
 
-      <section className="training-concept section-shell" id="training">
-        <div className="training-concept__image" aria-hidden="true" />
-        <div className="training-concept__content">
-          <p className="section-kicker">{copy.trainingConcept.kicker}</p>
-          <h2>{copy.trainingConcept.title}</h2>
-          <p>{copy.trainingConcept.text}</p>
-          <p>{copy.trainingConcept.note}</p>
-          <div className="training-concept__cards">
-            {copy.trainingConcept.items.map((item) => (
-              <article className="training-concept__card" key={item.title}>
-                <p>{item.kicker}</p>
-                <h3>{item.title}</h3>
-                <span>{item.text}</span>
-              </article>
-            ))}
+      <section className="booking-policy section-shell">
+        <div className="booking-policy__intro">
+          <p className="section-kicker">{copy.bookingPolicy.kicker}</p>
+          <h2>{copy.bookingPolicy.title}</h2>
+        </div>
+        <div className="booking-policy__body">
+          {copy.bookingPolicy.items.map((item) => (
+            <p className="booking-policy__item" key={item}>{item}</p>
+          ))}
+        </div>
+      </section>
+
+      <section className="booking-app">
+        <div className="booking-app__inner">
+          <div className="booking-app__copy">
+            <p className="section-kicker">{copy.bookingApp.kicker}</p>
+            <h2>{copy.bookingApp.title}</h2>
+            <p>{copy.bookingApp.text}</p>
+            <div className="booking-app__links">
+              {copy.bookingApp.links.map((item) => (
+                <a
+                  href={item.href}
+                  key={item.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
           </div>
+          <a className="booking-app__code" href="#" aria-label={copy.bookingApp.codeLabel}>
+            <img src={`${assetBasePath}/images/app_img_01.png`} alt="" />
+            <span>
+              <img src={`${assetBasePath}/images/ELAN_QR_Code.png`} alt="" />
+            </span>
+            <small>{copy.bookingApp.codeLabel}</small>
+          </a>
         </div>
       </section>
 
@@ -1151,47 +1192,6 @@ export default function Home() {
               </a>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="booking-policy section-shell">
-        <div className="booking-policy__intro">
-          <p className="section-kicker">{copy.bookingPolicy.kicker}</p>
-          <h2>{copy.bookingPolicy.title}</h2>
-        </div>
-        <div className="booking-policy__body">
-          {copy.bookingPolicy.items.map((item) => (
-            <p className="booking-policy__item" key={item}>{item}</p>
-          ))}
-        </div>
-      </section>
-
-      <section className="booking-app">
-        <div className="booking-app__inner">
-          <div className="booking-app__copy">
-            <p className="section-kicker">{copy.bookingApp.kicker}</p>
-            <h2>{copy.bookingApp.title}</h2>
-            <p>{copy.bookingApp.text}</p>
-            <div className="booking-app__links">
-              {copy.bookingApp.links.map((item) => (
-                <a
-                  href={item.href}
-                  key={item.label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </div>
-          <a className="booking-app__code" href="#" aria-label={copy.bookingApp.codeLabel}>
-            <img src={`${assetBasePath}/images/app_img_01.png`} alt="" />
-            <span>
-              <img src={`${assetBasePath}/images/ELAN_QR_Code.png`} alt="" />
-            </span>
-            <small>{copy.bookingApp.codeLabel}</small>
-          </a>
         </div>
       </section>
 
