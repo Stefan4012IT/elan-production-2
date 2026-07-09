@@ -229,7 +229,7 @@ const content = {
       name: 'Ime',
       email: 'Email',
       phone: 'Telefon',
-      focus: 'Trening fokus',
+      focus: 'Izaberite trening paket',
       focusPlaceholder: 'Nisam još odlučila',
       cta: 'Prijavi se za članstvo',
       submit: 'Prijavi se za članstvo',
@@ -496,7 +496,7 @@ const content = {
       name: 'Name',
       email: 'Email',
       phone: 'Phone',
-      focus: 'Training focus',
+      focus: 'Choose a training package',
       focusPlaceholder: 'I have not decided yet',
       cta: 'Apply',
       submit: 'Join the Waiting List',
@@ -853,7 +853,11 @@ export default function Home() {
           aria-label="ÉLAN home"
           onClick={handleHomeClick}
         >
-          <span className="brand-mark">ÉLAN</span>
+          <img
+            className="brand-logo"
+            src={`${assetBasePath}/images/ELAN_logo_black.png`}
+            alt="ÉLAN"
+          />
           <span className="brand-descriptor">Women’s Private Gym</span>
         </a>
         <div
@@ -1003,10 +1007,9 @@ export default function Home() {
           <p>{copy.trainingConcept.note}</p>
           <div className="training-concept__cards">
             {copy.trainingConcept.items.map((item) => (
-              <article className="training-concept__card" key={item.title}>
+              <article className="training-concept__card" key={item.kicker}>
                 <p>{item.kicker}</p>
-                <h3>{item.title}</h3>
-                <span>{item.text}</span>
+                <h4>{item.text}</h4>
               </article>
             ))}
           </div>
@@ -1287,7 +1290,11 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="site-footer__brand">
-          <span className="brand-mark">ÉLAN</span>
+          <img
+            className="brand-logo"
+            src={`${assetBasePath}/images/ELAN_logo_black.png`}
+            alt="ÉLAN"
+          />
           <p>
             {copy.footer.line.map((item, index) => (
               <span className={index === 0 ? 'site-footer__descriptor' : undefined} key={item}>
@@ -1355,8 +1362,8 @@ export default function Home() {
               <span />
             </button>
             <div className="promo-modal__content">
-              <p className="section-kicker">{copy.promoPopup.title}</p>
-              <h2 id="promo-modal-title">{copy.promoPopup.kicker}</h2>
+              <p className="section-kicker">{copy.promoPopup.kicker}</p>
+              <h2 id="promo-modal-title">{copy.promoPopup.title}</h2>
               {copy.promoPopup.text.map((item) => (
                 <p key={item}>{item}</p>
               ))}
