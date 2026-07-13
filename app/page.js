@@ -15,7 +15,7 @@ const content = {
       eyebrow: 'VIŠE OD TRENINGA',
       title: 'Snaga, gracioznost, disciplina.',
       text: 'ÉLAN je privatni prostor za trening namenjen ženama koje žele da grade snagu u mirnom, fokusiranom i prefinjenom okruženju.',
-      primary: 'Saznaj više',
+      primary: 'Saznajte više',
       secondary: null,
     },
     statement: {
@@ -125,27 +125,27 @@ const content = {
         highlight:
           'Članstvo aktivirano u ovom periodu zadržava početnu cenu tokom celog perioda aktivne članarine.',
         benefits: [],
-        cta: 'Prijavi se',
+        cta: 'Prijavite se za članstvo',
       },
       items: [
         {
           name: 'FOCUS',
           detail: '8 treninga mesečno',
-          price: '24.000 RSD',
+          price: '20.000 RSD',
           description:
             'Za one koje žele kontinuitet i ravnotežu između treninga i svakodnevnih obaveza.',
         },
         {
           name: 'DISCIPLINE',
           detail: '10 treninga mesečno',
-          price: '26.000 RSD',
+          price: '22.000 RSD',
           description:
             'Za one koje veruju da rezultati dolaze kroz doslednost i posvećen rad.',
         },
         {
           name: 'STRENGTH',
           detail: '12 treninga mesečno',
-          price: '28.000 RSD',
+          price: '24.000 RSD',
           description:
             'Za one koje žele maksimalnu podršku, napredak i posvećenost svojim ciljevima.',
         },
@@ -162,11 +162,10 @@ const content = {
       kicker: 'Članstvo',
       title: 'Ograničen broj članica',
       intro: 'Verujemo da kvalitet treninga počinje kvalitetom okruženja. Kako bismo svakoj članici pružili pažnju koju zaslužuje broj članova je ograničen.',
-      text:
-        'Članstvo je dostupno putem prijave.',
+      text: null,
       note: null,
       benefits: [],
-      cta: 'PRIJAVI SE ZA ČLANSTVO',
+      cta: 'PRIJAVITE SE ZA ČLANSTVO',
     },
     space: {
       kicker: 'PROSTOR',
@@ -231,8 +230,8 @@ const content = {
       phone: 'Telefon',
       focus: 'Izaberite trening paket',
       focusPlaceholder: 'Nisam još odlučila',
-      cta: 'Prijavi se za članstvo',
-      submit: 'Prijavi se za članstvo',
+      cta: 'Prijavite se za članstvo',
+      submit: 'Prijavite se za članstvo',
       success: 'Prijava je poslata.',
       successTitle: 'Prijava je primljena.',
       successText:
@@ -251,7 +250,7 @@ const content = {
       name: 'Ime',
       email: 'Email',
       phone: 'Telefon',
-      submit: 'Prijavi se',
+      submit: 'Prijavite se',
       success: 'Prijava je poslata.',
       successText: 'Hvala. Javićemo se uskoro kako bismo dogovorili prvi trening.',
       error: 'Slanje trenutno nije uspelo.',
@@ -392,27 +391,27 @@ const content = {
         highlight:
           'Membership activated during this period keeps its starting price for the full duration of the active membership.',
         benefits: [],
-        cta: 'Apply',
+        cta: 'Apply for membership',
       },
       items: [
         {
           name: 'FOCUS',
           detail: '8 sessions per month',
-          price: '24,000 RSD',
+          price: '20,000 RSD',
           description:
             'For those who want continuity and balance between training and everyday responsibilities.',
         },
         {
           name: 'DISCIPLINE',
           detail: '10 sessions per month',
-          price: '26,000 RSD',
+          price: '22,000 RSD',
           description:
             'For those who believe results come through consistency and dedicated work.',
         },
         {
           name: 'STRENGTH',
           detail: '12 sessions per month',
-          price: '28,000 RSD',
+          price: '24,000 RSD',
           description:
             'For those who want maximum support, progress and commitment to their goals.',
         },
@@ -429,8 +428,7 @@ const content = {
       kicker: 'Membership',
       title: 'Limited Membership',
       intro: 'We believe training quality begins with the quality of the environment. To give every member the attention she deserves, the number of memberships is limited.',
-      text:
-        'Membership is available by application.',
+      text: null,
       note: null,
       benefits: [],
       cta: 'Apply for membership',
@@ -498,8 +496,8 @@ const content = {
       phone: 'Phone',
       focus: 'Choose a training package',
       focusPlaceholder: 'I have not decided yet',
-      cta: 'Apply',
-      submit: 'Join the Waiting List',
+      cta: 'Apply for membership',
+      submit: 'Apply for membership',
       success: 'Your application has been sent.',
       successTitle: 'Application received.',
       successText:
@@ -1091,7 +1089,7 @@ export default function Home() {
           </div>
           <div className="early-access__body">
             <p>{copy.earlyAccess.intro}</p>
-            <p>{copy.earlyAccess.text}</p>
+            {copy.earlyAccess.text ? <p>{copy.earlyAccess.text}</p> : null}
             {copy.earlyAccess.note ? <p>{copy.earlyAccess.note}</p> : null}
             {copy.earlyAccess.benefits.length ? (
               <ul className="early-access__benefits">
@@ -1100,9 +1098,6 @@ export default function Home() {
                 ))}
               </ul>
             ) : null}
-            <a className="button button--dark" href="#apply">
-              {copy.earlyAccess.cta}
-            </a>
           </div>
           <a className="early-access__cue" href="#membership" aria-label={copy.membership.title}>
             <span />
