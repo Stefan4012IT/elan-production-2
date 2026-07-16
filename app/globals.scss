@@ -14,7 +14,7 @@
 }
 
 @font-face {
-  font-family: 'Helvetica ELAN';
+  font-family: 'Elan Sans';
   src:
     local('Helvetica Light'),
     local('Helvetica Neue Light'),
@@ -27,7 +27,7 @@
 }
 
 @font-face {
-  font-family: 'Helvetica ELAN';
+  font-family: 'Elan Sans';
   src:
     url('#{$asset-prefix}/fonts/helvetica-255-cdnfonts/Helvetica.ttf') format('truetype'),
     local('Helvetica'),
@@ -38,7 +38,7 @@
 }
 
 @font-face {
-  font-family: 'Helvetica ELAN';
+  font-family: 'Elan Sans';
   src:
     url('#{$asset-prefix}/fonts/helvetica-255-cdnfonts/Helvetica-Oblique.ttf')
       format('truetype'),
@@ -50,7 +50,7 @@
 }
 
 @font-face {
-  font-family: 'Helvetica ELAN';
+  font-family: 'Elan Sans';
   src:
     url('#{$asset-prefix}/fonts/helvetica-255-cdnfonts/Helvetica-Bold.ttf') format('truetype'),
     local('Helvetica Bold'),
@@ -61,7 +61,7 @@
 }
 
 @font-face {
-  font-family: 'Helvetica ELAN';
+  font-family: 'Elan Sans';
   src:
     url('#{$asset-prefix}/fonts/helvetica-255-cdnfonts/Helvetica-BoldOblique.ttf')
       format('truetype'),
@@ -70,6 +70,36 @@
   font-weight: 700;
   font-style: italic;
   font-display: swap;
+}
+
+@font-face {
+  font-family: 'Elan Sans';
+  src:
+    url('#{$asset-prefix}/fonts/helvetica-neue/HelveticaNeueLight.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0106-0107, U+010C-010D, U+0110-0111, U+0160-0161, U+017D-017E;
+}
+
+@font-face {
+  font-family: 'Elan Sans';
+  src:
+    url('#{$asset-prefix}/fonts/helvetica-neue/HelveticaNeueRoman.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0106-0107, U+010C-010D, U+0110-0111, U+0160-0161, U+017D-017E;
+}
+
+@font-face {
+  font-family: 'Elan Sans';
+  src:
+    url('#{$asset-prefix}/fonts/helvetica-neue/HelveticaNeueBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0106-0107, U+010C-010D, U+0110-0111, U+0160-0161, U+017D-017E;
 }
 
 :root {
@@ -87,8 +117,8 @@
   --heading-font-legacy: 'Optima Nova LT Pro', Optima, 'Optima Nova', 'Cormorant Garamond',
     Georgia, serif;
   --body-font-legacy: 'Inter', system-ui, sans-serif;
-  --heading-font: 'Helvetica ELAN', 'Helvetica Neue', Helvetica, Arial, var(--heading-font-legacy);
-  --body-font: 'Montserrat', 'Helvetica ELAN', var(--body-font-legacy);
+  --heading-font: 'Elan Sans', 'Helvetica Neue', Helvetica, Arial, var(--heading-font-legacy);
+  --body-font: 'Montserrat', 'Elan Sans', var(--body-font-legacy);
   --body-copy-size: clamp(1rem, 1.4vw, 1.15rem);
   --detail-copy-size: clamp(0.9rem, 1vw, 0.92rem);
   --label-size: 0.76rem;
