@@ -1106,6 +1106,16 @@ h3 {
   border: 1px solid var(--border);
 }
 
+.membership-packages__note {
+  margin: 0;
+  padding: 16px clamp(24px, 4vw, 36px);
+  border-top: 1px solid var(--border);
+  background: rgba(251, 250, 247, 0.36);
+  color: var(--muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
 .membership-row {
   background: transparent;
   color: var(--text);
@@ -1284,6 +1294,52 @@ h3 {
       border-color: var(--white);
       background: var(--white);
       color: var(--text);
+    }
+  }
+}
+
+.booking-app__steps {
+  max-width: 620px;
+  margin-top: 34px;
+
+  h3 {
+    margin: 0;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  ol {
+    display: grid;
+    gap: 0;
+    margin: 18px 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: booking-step;
+    border-top: 1px solid rgba(251, 250, 247, 0.22);
+  }
+
+  li {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(251, 250, 247, 0.18);
+    color: rgba(251, 250, 247, 0.76);
+    font-size: var(--body-copy-size);
+    line-height: 1.55;
+    counter-increment: booking-step;
+
+    &::before {
+      content: counter(booking-step, decimal-leading-zero);
+      color: #d5bc87;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1.9;
     }
   }
 }
@@ -1961,9 +2017,11 @@ h3 {
   }
 
   h2 {
-    max-width: 520px;
+    max-width: 100%;
     margin-top: 12px;
     color: var(--white);
+    font-size: clamp(2.45rem, 4.6vw, 4.25rem);
+    line-height: 1.04;
   }
 
   > p:not(.section-kicker) {
@@ -1974,11 +2032,14 @@ h3 {
   }
 
   .promo-modal__highlight {
-    max-width: 560px;
+    max-width: 600px;
+    margin-top: 26px;
+    padding-left: 18px;
+    border-left: 1px solid #d5bc87;
     color: var(--white);
-    font-size: clamp(1.02rem, 1.35vw, 1.24rem);
+    font-size: clamp(1.24rem, 1.9vw, 1.58rem);
     font-weight: 700;
-    line-height: 1.45;
+    line-height: 1.32;
   }
 }
 

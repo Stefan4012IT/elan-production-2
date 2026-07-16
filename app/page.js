@@ -7,6 +7,7 @@ const content = {
     nav: {
       club: 'Klub',
       training: 'Trening',
+      app: 'App',
       membership: 'Članstvo',
       apply: 'Prijava',
       label: 'Glavna navigacija',
@@ -114,6 +115,7 @@ const content = {
       highlights:
         'Obezbedi svoj Elan Membership na vreme i postani deo zajednice koja kreće prva.',
       packagesLabel: 'Paketi',
+      packagesNote: 'Svi paketi važe 30 dana.',
       imagePromo: {
         kicker: 'RANE PRIJAVE',
         title: 'Treniraj sada. Zadrži svoju cenu cele godine.',
@@ -189,7 +191,6 @@ const content = {
       kicker: 'Pravila zakazivanja',
       title: 'Planirano. Fleksibilno. Jednostavno.',
       items: [
-        'Svi paketi važe na mesečnom nivou.',
         'Prilikom učlanjenja rezervišu se željeni termini treninga.',
         'U slučaju sprečenosti, termin je moguće blagovremeno otkazati putem aplikacije.',
         'Blagovremeno otkazani termini neće biti obračunati i mogu se nadoknaditi u prvom dostupnom terminu kod izabranog trenera.',
@@ -200,6 +201,12 @@ const content = {
       kicker: 'ÉLAN APP',
       title: 'Zakazivanje uvek pri ruci.',
       text: 'Raspored treninga ostaje pregledan i jednostavan, uz diskretan pristup terminima i promenama kada je to potrebno.',
+      stepsTitle: 'Zakazivanje u nekoliko koraka.',
+      steps: [
+        'Preuzmite ÉLAN aplikaciju sa App Store-a ili Google Play-a.',
+        'Skenirajte QR kod u aplikaciji kako biste započeli registraciju.',
+        'Kreirajte svoj nalog i upravljajte terminima jednostavno i u svakom trenutku.',
+      ],
       codeLabel: 'Pređi za scan',
       links: [
         {
@@ -241,7 +248,7 @@ const content = {
     },
     promoPopup: {
       kicker: 'Dobro došli u ÉLAN.',
-      title: 'Besplatan uvodni trening',
+      title: 'VAŠ ÉLAN POČINJE OVDE.',
       text: [
         'Pre nego što postanete član, pozivamo Vas da doživite kako izgleda trening u prostoru gde je fokus isključivo na Vama.',
         'Mirnije okruženje. Manje ljudi. Više pažnje.',
@@ -273,6 +280,7 @@ const content = {
     nav: {
       club: 'Club',
       training: 'Training',
+      app: 'App',
       membership: 'Membership',
       apply: 'Apply',
       label: 'Main navigation',
@@ -380,6 +388,7 @@ const content = {
       highlights:
         'Secure your Elan Membership in time and become part of the community that starts first.',
       packagesLabel: 'Packages',
+      packagesNote: 'All packages are valid for 30 days.',
       imagePromo: {
         kicker: 'EARLY APPLICATIONS',
         title: 'Train now. Keep your price all year.',
@@ -455,7 +464,6 @@ const content = {
       kicker: 'BOOKING POLICY',
       title: 'Planned. Flexible. Simple.',
       items: [
-        'All packages are valid on a monthly basis.',
         'Preferred training appointments are reserved upon joining.',
         'If you are unable to attend, the appointment can be cancelled in time through the app.',
         'Appointments cancelled in time will not be charged and can be made up in the first available appointment with the selected trainer.',
@@ -466,6 +474,12 @@ const content = {
       kicker: 'ÉLAN APP',
       title: 'Scheduling, always within reach.',
       text: 'Your training schedule stays clear and simple, with discreet access to appointments and changes when needed.',
+      stepsTitle: 'Booking in a few steps.',
+      steps: [
+        'Download the ÉLAN app from the App Store or Google Play.',
+        'Scan the QR code in the app to start registration.',
+        'Create your account and manage appointments simply, anytime.',
+      ],
       codeLabel: 'Hover to scan',
       links: [
         {
@@ -507,7 +521,7 @@ const content = {
     },
     promoPopup: {
       kicker: 'Welcome to ÉLAN.',
-      title: 'Free introductory session',
+      title: 'YOUR ÉLAN BEGINS HERE.',
       text: [
         'Before becoming a member, we invite you to experience what training feels like in a space where the focus is entirely on you.',
         'A calmer environment. Fewer people. More attention.',
@@ -869,6 +883,9 @@ export default function Home() {
             <a href="#training" onClick={() => setIsMenuOpen(false)}>
               {copy.nav.training}
             </a>
+            <a href="#app" onClick={() => setIsMenuOpen(false)}>
+              {copy.nav.app}
+            </a>
             <a href="#membership" onClick={() => setIsMenuOpen(false)}>
               {copy.nav.membership}
             </a>
@@ -1052,12 +1069,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="booking-app">
+      <section className="booking-app" id="app">
         <div className="booking-app__inner">
           <div className="booking-app__copy">
             <p className="section-kicker">{copy.bookingApp.kicker}</p>
             <h2>{copy.bookingApp.title}</h2>
             <p>{copy.bookingApp.text}</p>
+            <div className="booking-app__steps">
+              <h3>{copy.bookingApp.stepsTitle}</h3>
+              <ol>
+                {copy.bookingApp.steps.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ol>
+            </div>
             <div className="booking-app__links">
               {copy.bookingApp.links.map((item) => (
                 <a
@@ -1146,6 +1171,7 @@ export default function Home() {
                   </article>
                 );
               })}
+              <p className="membership-packages__note">{copy.membership.packagesNote}</p>
             </div>
           </div>
           <div className="membership__media">
