@@ -2235,8 +2235,10 @@ h3 {
 
   .training-concept__image {
     order: 4;
+    display: block;
+    width: 100%;
     height: auto;
-    min-height: auto;
+    min-height: clamp(270px, 76vw, 420px);
     margin-top: var(--mobile-block-gap);
     aspect-ratio: 16 / 10;
     background-position: 50% 75%;
