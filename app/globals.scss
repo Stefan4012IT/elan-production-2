@@ -780,6 +780,10 @@ h3 {
     url('#{$asset-prefix}/images/training-concept__image_002.png') center / cover;
 }
 
+.training-concept__image--mobile {
+  display: none;
+}
+
 .training-concept__content {
   min-width: 0;
 
@@ -2231,10 +2235,14 @@ h3 {
 
   .training-concept {
     gap: 0;
+    overflow: hidden;
   }
 
-  .training-concept__image {
-    order: 4;
+  .training-concept__image--desktop {
+    display: none;
+  }
+
+  .training-concept__image--mobile {
     display: block;
     width: 100%;
     height: auto;
@@ -2245,25 +2253,20 @@ h3 {
   }
 
   .training-concept__content {
-    display: contents;
-
-    .section-kicker {
-      order: 1;
-    }
+    min-width: 0;
 
     h2 {
-      order: 2;
+      max-width: 100%;
       margin-top: 8px;
+      overflow-wrap: break-word;
     }
 
-    > p {
-      order: 3;
-      margin-top: 0;
+    > p:not(.section-kicker) {
+      max-width: 100%;
     }
   }
 
   .training-concept__cards {
-    order: 5;
     grid-template-columns: 1fr;
     margin-top: var(--mobile-block-gap);
   }

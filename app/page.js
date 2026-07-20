@@ -1006,12 +1006,13 @@ export default function Home() {
       </section> */}
 
       <section className="training-concept section-shell" id="training">
-        <div className="training-concept__image" aria-hidden="true" />
+        <div className="training-concept__image training-concept__image--desktop" aria-hidden="true" />
         <div className="training-concept__content">
           <p className="section-kicker">{copy.trainingConcept.kicker}</p>
           <h2>{copy.trainingConcept.title}</h2>
           <p>{copy.trainingConcept.text}</p>
           <p>{copy.trainingConcept.note}</p>
+          <div className="training-concept__image training-concept__image--mobile" aria-hidden="true" />
           <div className="training-concept__cards">
             {copy.trainingConcept.items.map((item) => (
               <article className="training-concept__card" key={item.kicker}>
