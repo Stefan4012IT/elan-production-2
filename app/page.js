@@ -617,31 +617,23 @@ export default function Home() {
   const promoImage = `url('${assetBasePath}/images/training-concept__image_001.png')`;
   const spaceSlides = [
     {
-      src: `${assetBasePath}/images/elan-prostor-7.png`,
+      src: `${assetBasePath}/images/prostor_01.jpeg`,
       position: 'center',
     },
     {
-      src: `${assetBasePath}/images/elan-prostor-1.png`,
+      src: `${assetBasePath}/images/prostor_02.jpeg`,
       position: 'center',
     },
     {
-      src: `${assetBasePath}/images/elan-prostor-2.png`,
+      src: `${assetBasePath}/images/prostor_03.jpeg`,
       position: 'center',
     },
     {
-      src: `${assetBasePath}/images/elan-prostor-3.png`,
+      src: `${assetBasePath}/images/prostor_04.jpeg`,
       position: 'center',
     },
     {
-      src: `${assetBasePath}/images/elan-prostor-4.png`,
-      position: 'center',
-    },
-    {
-      src: `${assetBasePath}/images/elan-prostor-5.png`,
-      position: 'center',
-    },
-    {
-      src: `${assetBasePath}/images/elan-prostor-6.png`,
+      src: `${assetBasePath}/images/prostor_05.jpeg`,
       position: 'center',
     },
   ];
