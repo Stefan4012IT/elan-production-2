@@ -118,7 +118,7 @@ const content = {
       packagesNote: 'Svi paketi važe 30 dana.',
       imagePromo: {
         kicker: 'RANE PRIJAVE',
-        title: 'Treniraj sada. Zadrži svoju cenu cele godine.',
+        title: 'Trenirajte sada. Zadržite posebnu cenu cele godine.',
         text: [
           'Elan već živi svoj letnji ritam — treninzi su u toku, a prve članice imaju pristup posebnim uslovima pre zvaničnog otvaranja, 15. septembra 2026.',
           'Članstvo aktivirano u ovom periodu zadržava početnu cenu tokom celog perioda aktivne članarine. Od 15. septembra važiće novi cenovnik.',
@@ -191,17 +191,16 @@ const content = {
       kicker: 'Pravila zakazivanja',
       title: 'Planirano. Fleksibilno. Jednostavno.',
       items: [
-        'Prilikom učlanjenja rezervišu se željeni termini treninga.',
-        'U slučaju sprečenosti, termin je moguće blagovremeno otkazati putem aplikacije.',
-        'Blagovremeno otkazani termini neće biti obračunati i mogu se nadoknaditi u prvom dostupnom terminu kod izabranog trenera.',
-        'Na taj način obezbeđujemo fleksibilnost za članice, uz očuvanje kvaliteta rada i organizacije treninga.',
+        'Vaši termini rezervišu se prilikom učlanjenja, u skladu sa Vašim rasporedom i ritmom života.',
+        'Ukoliko niste u mogućnosti da prisustvujete treningu, termin možete blagovremeno otkazati putem aplikacije.',
+        'Blagovremeno otkazani trening ostaje Vam na raspolaganju i možete ga nadoknaditi u prvom dostupnom terminu kod svog trenera.',
+        'Na taj način omogućavamo Vam veću fleksibilnost, uz organizaciju koja obezbeđuje kontinuitet i kvalitet svakog treninga.',
       ],
     },
     bookingApp: {
       kicker: 'ÉLAN APP',
       title: 'Zakazivanje uvek pri ruci.',
       text: 'Raspored treninga ostaje pregledan i jednostavan, uz diskretan pristup terminima i promenama kada je to potrebno.',
-      stepsTitle: 'Zakazivanje u nekoliko koraka.',
       steps: [
         'Preuzmite ÉLAN aplikaciju sa App Store-a ili Google Play-a.',
         'Skenirajte QR kod u aplikaciji kako biste započeli registraciju.',
@@ -268,6 +267,8 @@ const content = {
       line: ['Women’s Private Gym', 'Focus · Discipline · Strength'],
       addressLabel: 'Lokacija',
       address: ['Ivankovačka 6', 'Beograd'],
+      addressHref:
+        'https://www.google.com/maps/place/%D0%98%D0%B2%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D0%B0%D1%87%D0%BA%D0%B0+6,+%D0%91%D0%B5%D0%BE%D0%B3%D1%80%D0%B0%D0%B4/@44.8073383,20.4762225,17z/data=!3m1!4b1!4m6!3m5!1s0x475a7a9895906a3f:0x1cc70b635f44c727!8m2!3d44.8073345!4d20.4787974!16s%2Fg%2F11kx26vptj?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D',
       phoneLabel: 'Kontakt',
       phone: '066 066 166',
       phoneHref: 'tel:+38166066166',
@@ -391,7 +392,7 @@ const content = {
       packagesNote: 'All packages are valid for 30 days.',
       imagePromo: {
         kicker: 'EARLY APPLICATIONS',
-        title: 'Train now. Keep your price all year.',
+        title: 'Train now. Keep your special price all year.',
         text: [
           'Elan is already moving in its summer rhythm. Training sessions are underway, and the first members have access to special terms before the official opening on September 15, 2026.',
           'Membership activated during this period keeps its starting price for the full duration of the active membership. From September 15, a new price list will apply.',
@@ -464,17 +465,16 @@ const content = {
       kicker: 'BOOKING POLICY',
       title: 'Planned. Flexible. Simple.',
       items: [
-        'Preferred training appointments are reserved upon joining.',
-        'If you are unable to attend, the appointment can be cancelled in time through the app.',
-        'Appointments cancelled in time will not be charged and can be made up in the first available appointment with the selected trainer.',
-        'This gives members flexibility while preserving the quality of work and training organisation.',
+        'Your appointments are reserved upon joining, in line with your schedule and rhythm of life.',
+        'If you are unable to attend training, you can cancel the appointment in time through the app.',
+        'A training session cancelled in time remains available to you and can be made up in the first available slot with your trainer.',
+        'This gives you greater flexibility, with organisation that preserves continuity and the quality of every training session.',
       ],
     },
     bookingApp: {
       kicker: 'ÉLAN APP',
       title: 'Scheduling, always within reach.',
       text: 'Your training schedule stays clear and simple, with discreet access to appointments and changes when needed.',
-      stepsTitle: 'Booking in a few steps.',
       steps: [
         'Download the ÉLAN app from the App Store or Google Play.',
         'Scan the QR code in the app to start registration.',
@@ -541,6 +541,8 @@ const content = {
       line: ['Women’s Private Gym', 'Focus · Discipline · Strength'],
       addressLabel: 'Location',
       address: ['Ivankovačka 6', 'Beograd'],
+      addressHref:
+        'https://www.google.com/maps/place/%D0%98%D0%B2%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D0%B0%D1%87%D0%BA%D0%B0+6,+%D0%91%D0%B5%D0%BE%D0%B3%D1%80%D0%B0%D0%B4/@44.8073383,20.4762225,17z/data=!3m1!4b1!4m6!3m5!1s0x475a7a9895906a3f:0x1cc70b635f44c727!8m2!3d44.8073345!4d20.4787974!16s%2Fg%2F11kx26vptj?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D',
       phoneLabel: 'Phone',
       phone: '066 066 166',
       phoneHref: 'tel:+38166066166',
@@ -1069,7 +1071,6 @@ export default function Home() {
             <h2>{copy.bookingApp.title}</h2>
             <p>{copy.bookingApp.text}</p>
             <div className="booking-app__steps">
-              <h3>{copy.bookingApp.stepsTitle}</h3>
               <ol>
                 {copy.bookingApp.steps.map((item) => (
                   <li key={item}>{item}</li>
@@ -1320,9 +1321,11 @@ export default function Home() {
         <div className="site-footer__details">
           <div>
             <p className="site-footer__label">{copy.footer.addressLabel}</p>
-            {copy.footer.address.map((item) => (
-              <p key={item}>{item}</p>
-            ))}
+            <a href={copy.footer.addressHref} target="_blank" rel="noopener noreferrer">
+              {copy.footer.address.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </a>
           </div>
           <div>
             <p className="site-footer__label">{copy.footer.phoneLabel}</p>
