@@ -246,7 +246,7 @@ const content = {
       error: 'Slanje trenutno nije uspelo.',
     },
     promoPopup: {
-      kicker: 'Dobro došli u ÉLAN.',
+      kicker: 'Dobro došli.',
       title: 'VAŠ ÉLAN POČINJE OVDE.',
       text: [
         'Pre nego što postanete član, pozivamo Vas da doživite kako izgleda trening u prostoru gde je fokus isključivo na Vama.',
