@@ -1,62 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap');
 
-@font-face {
-  font-family: 'Optima Nova LT Pro';
-  src:
-    url('#{$asset-prefix}/fonts/optima-nova-lt-pro/OptimaNovaLTProLight.otf')
-      format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Elan Sans';
-  src:
-    url('#{$asset-prefix}/fonts/helvetica-255-cdnfonts/helvetica-light-587ebe5a59211.ttf')
-      format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Elan Sans';
-  src:
-    url('#{$asset-prefix}/fonts/helvetica-255-cdnfonts/Helvetica.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Elan Sans';
-  src:
-    url('#{$asset-prefix}/fonts/helvetica-255-cdnfonts/Helvetica-Oblique.ttf')
-      format('truetype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Elan Sans';
-  src:
-    url('#{$asset-prefix}/fonts/helvetica-255-cdnfonts/Helvetica-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Elan Sans';
-  src:
-    url('#{$asset-prefix}/fonts/helvetica-255-cdnfonts/Helvetica-BoldOblique.ttf')
-      format('truetype');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: 'Optima Nova LT Pro';
+//   src:
+//     url('#{$asset-prefix}/fonts/optima-nova-lt-pro/OptimaNovaLTProLight.otf')
+//       format('opentype');
+//   font-weight: 300;
+//   font-style: normal;
+//   font-display: swap;
+// }
 
 @font-face {
   font-family: 'Elan Sans';
@@ -65,7 +17,6 @@
   font-weight: 300;
   font-style: normal;
   font-display: swap;
-  unicode-range: U+0106-0107, U+010C-010D, U+0110-0111, U+0160-0161, U+017D-017E;
 }
 
 @font-face {
@@ -75,7 +26,15 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  unicode-range: U+0106-0107, U+010C-010D, U+0110-0111, U+0160-0161, U+017D-017E;
+}
+
+@font-face {
+  font-family: 'Elan Sans';
+  src:
+    url('#{$asset-prefix}/fonts/helvetica-neue/HelveticaNeueItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -85,7 +44,15 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  unicode-range: U+0106-0107, U+010C-010D, U+0110-0111, U+0160-0161, U+017D-017E;
+}
+
+@font-face {
+  font-family: 'Elan Sans';
+  src:
+    url('#{$asset-prefix}/fonts/helvetica-neue/HelveticaNeueBoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
 }
 
 :root {
@@ -100,8 +67,7 @@
   --white: #fbfaf7;
   --max: 1160px;
   --header-height: 82px;
-  --heading-font-legacy: 'Optima Nova LT Pro', Optima, 'Optima Nova', 'Cormorant Garamond',
-    Georgia, serif;
+  --heading-font-legacy: 'Cormorant Garamond', Georgia, serif;
   --body-font-legacy: 'Inter', system-ui, sans-serif;
   --heading-font: 'Elan Sans', 'Helvetica Neue', Helvetica, Arial, var(--heading-font-legacy);
   --body-font: 'Montserrat', 'Elan Sans', var(--body-font-legacy);
