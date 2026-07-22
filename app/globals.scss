@@ -1284,6 +1284,10 @@ h3 {
   }
 }
 
+.booking-app__mobile-flow {
+  display: none;
+}
+
 .booking-app__steps {
   max-width: 620px;
   margin-top: 34px;
@@ -1328,6 +1332,58 @@ h3 {
       line-height: 1.9;
     }
   }
+}
+
+.booking-app__mobile-steps {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: booking-step;
+  border-top: 1px solid rgba(251, 250, 247, 0.22);
+
+  > li {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 14px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(251, 250, 247, 0.18);
+    color: rgba(251, 250, 247, 0.76);
+    font-size: var(--body-copy-size);
+    line-height: 1.55;
+    counter-increment: booking-step;
+
+    &::before {
+      content: counter(booking-step, decimal-leading-zero);
+      color: #d5bc87;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1.9;
+    }
+  }
+
+  p {
+    margin: 0;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+}
+
+.booking-app__mobile-step-body {
+  min-width: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.booking-app__copy .booking-app__mobile-steps p {
+  max-width: none;
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 .booking-app__code {
@@ -2282,6 +2338,38 @@ h3 {
     padding: 20px;
   }
 
+  .booking-app__steps--desktop,
+  .booking-app__links--desktop,
+  .booking-app__code--desktop {
+    display: none;
+  }
+
+  .booking-app__mobile-flow {
+    display: block;
+    max-width: 620px;
+    margin-top: 34px;
+
+    .booking-app__links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 0;
+
+      a {
+        min-width: 0;
+        padding-inline: 12px;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .booking-app__mobile-steps {
+    border-top: 0;
+
+    > li {
+      border-bottom: 0;
+    }
+  }
+
   .booking-app__code {
     justify-self: start;
     min-height: 360px;
@@ -2303,6 +2391,11 @@ h3 {
         transform: none;
       }
     }
+  }
+
+  .booking-app__code--mobile {
+    width: 100%;
+    margin-top: 2px;
   }
 
   .site-footer__details {
@@ -2513,7 +2606,7 @@ h3 {
     text-align: center;
   }
 
-  .booking-app__links a {
+  .booking-app__links--desktop a {
     width: 100%;
   }
 

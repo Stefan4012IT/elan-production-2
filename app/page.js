@@ -202,7 +202,7 @@ const content = {
       title: 'Zakazivanje uvek pri ruci.',
       text: 'Raspored treninga ostaje pregledan i jednostavan, uz diskretan pristup terminima i promenama kada je to potrebno.',
       steps: [
-        'Preuzmite ÉLAN aplikaciju sa App Store-a ili Google Play-a.',
+        'Preuzmite aplikaciju.',
         'Skenirajte QR kod u aplikaciji kako biste započeli registraciju.',
         'Kreirajte svoj nalog i upravljajte terminima jednostavno i u svakom trenutku.',
       ],
@@ -476,7 +476,7 @@ const content = {
       title: 'Scheduling, always within reach.',
       text: 'Your training schedule stays clear and simple, with discreet access to appointments and changes when needed.',
       steps: [
-        'Download the ÉLAN app from the App Store or Google Play.',
+        'Download the app.',
         'Scan the QR code in the app to start registration.',
         'Create your account and manage appointments simply, anytime.',
       ],
@@ -1089,14 +1089,14 @@ export default function Home() {
             <p className="section-kicker">{copy.bookingApp.kicker}</p>
             <h2>{copy.bookingApp.title}</h2>
             <p>{copy.bookingApp.text}</p>
-            <div className="booking-app__steps">
+            <div className="booking-app__steps booking-app__steps--desktop">
               <ol>
                 {copy.bookingApp.steps.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ol>
             </div>
-            <div className="booking-app__links">
+            <div className="booking-app__links booking-app__links--desktop">
               {copy.bookingApp.links.map((item) => (
                 <a
                   href={item.href}
@@ -1108,8 +1108,46 @@ export default function Home() {
                 </a>
               ))}
             </div>
+            <div className="booking-app__mobile-flow">
+              <ol className="booking-app__mobile-steps">
+                <li>
+                  <div className="booking-app__mobile-step-body">
+                    <p>{copy.bookingApp.steps[0]}</p>
+                    <div className="booking-app__links">
+                      {copy.bookingApp.links.map((item) => (
+                        <a
+                          href={item.href}
+                          key={item.label}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {item.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div className="booking-app__mobile-step-body">
+                    <p>{copy.bookingApp.steps[1]}</p>
+                    <a className="booking-app__code booking-app__code--mobile" href="#" aria-label={copy.bookingApp.codeLabel}>
+                      <img src={`${assetBasePath}/images/app_img_01.png`} alt="" />
+                      <span>
+                        <img src={`${assetBasePath}/images/ELAN_QR_Code.png`} alt="" />
+                      </span>
+                      <small>{copy.bookingApp.codeLabel}</small>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div className="booking-app__mobile-step-body">
+                    <p>{copy.bookingApp.steps[2]}</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
           </div>
-          <a className="booking-app__code" href="#" aria-label={copy.bookingApp.codeLabel}>
+          <a className="booking-app__code booking-app__code--desktop" href="#" aria-label={copy.bookingApp.codeLabel}>
             <img src={`${assetBasePath}/images/app_img_01.png`} alt="" />
             <span>
               <img src={`${assetBasePath}/images/ELAN_QR_Code.png`} alt="" />
