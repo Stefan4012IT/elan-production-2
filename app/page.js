@@ -858,6 +858,9 @@ export default function Home() {
       promoCloseTimeout.current = window.setTimeout(closePromoPopup, 1800);
     }
   };
+  const handleBookingCodeClick = (event) => {
+    event.preventDefault();
+  };
 
   return (
     <main
@@ -1130,7 +1133,12 @@ export default function Home() {
                 <li>
                   <div className="booking-app__mobile-step-body">
                     <p>{copy.bookingApp.steps[1]}</p>
-                    <a className="booking-app__code booking-app__code--mobile" href="#" aria-label={copy.bookingApp.codeLabel}>
+                    <a
+                      className="booking-app__code booking-app__code--mobile"
+                      href="#"
+                      onClick={handleBookingCodeClick}
+                      aria-label={copy.bookingApp.codeLabel}
+                    >
                       <img src={`${assetBasePath}/images/app_img_01.png`} alt="" />
                       <span>
                         <img src={`${assetBasePath}/images/ELAN_QR_Code.png`} alt="" />
@@ -1147,7 +1155,12 @@ export default function Home() {
               </ol>
             </div>
           </div>
-          <a className="booking-app__code booking-app__code--desktop" href="#" aria-label={copy.bookingApp.codeLabel}>
+          <a
+            className="booking-app__code booking-app__code--desktop"
+            href="#"
+            onClick={handleBookingCodeClick}
+            aria-label={copy.bookingApp.codeLabel}
+          >
             <img src={`${assetBasePath}/images/app_img_01.png`} alt="" />
             <span>
               <img src={`${assetBasePath}/images/ELAN_QR_Code.png`} alt="" />
