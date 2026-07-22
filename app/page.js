@@ -604,6 +604,7 @@ export default function Home() {
   const [isPromoOpen, setIsPromoOpen] = useState(false);
   const [promoDismissed, setPromoDismissed] = useState(false);
   const [promoSubmitState, setPromoSubmitState] = useState('idle');
+  const [promoSource, setPromoSource] = useState('elan-free-training-popup');
   const [promoStartedAt, setPromoStartedAt] = useState(() => new Date().toISOString());
   const [formStartedAt] = useState(() => new Date().toISOString());
   const spaceTouchStart = useRef(null);
@@ -647,7 +648,24 @@ export default function Home() {
     return () => window.clearInterval(intervalId);
   }, []);
   useEffect(() => {
-    if (promoDismissed) {
+    const params = new URLSearchParams(window.location.search);
+    const shouldOpenQrPromo =
+      params.get('promo') === 'qr' ||
+      params.get('popup') === 'qr' ||
+      params.get('source') === 'flyer';
+
+    if (!shouldOpenQrPromo) {
+      return;
+    }
+
+    setPromoSource('elan-flyer-qr-popup');
+    setPromoDismissed(false);
+    setPromoSubmitState('idle');
+    setPromoStartedAt(new Date().toISOString());
+    setIsPromoOpen(true);
+  }, []);
+  useEffect(() => {
+    if (promoDismissed || isPromoOpen) {
       return undefined;
     }
 
@@ -657,7 +675,7 @@ export default function Home() {
     }, 5000);
 
     return () => window.clearTimeout(timeoutId);
-  }, [promoDismissed]);
+  }, [promoDismissed, isPromoOpen]);
   useEffect(() => {
     if (!isPromoOpen) {
       return undefined;
@@ -817,6 +835,7 @@ export default function Home() {
 
     formData.set('phone', normalizedPhone);
     formData.set('focus', copy.promoPopup.focus);
+    formData.set('source', promoSource);
     formData.set('userAgent', navigator.userAgent);
     formData.set('ip', '');
     formData.set('pageUrl', window.location.href);
@@ -1407,7 +1426,7 @@ export default function Home() {
                     />
                   </label>
                   <input type="hidden" name="formStartedAt" value={promoStartedAt} />
-                  <input type="hidden" name="source" value="elan-free-training-popup" />
+                  <input type="hidden" name="source" value={promoSource} />
                   <input type="hidden" name="focus" value={copy.promoPopup.focus} />
                   <input type="hidden" name="language" value={language} />
                   <input type="hidden" name="ip" value="" />
