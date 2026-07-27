@@ -74,7 +74,7 @@ const content = {
       ],
     },
     ease: {
-      kicker: 'ELAN iskustvo',
+      kicker: 'ÉLAN iskustvo',
       title: 'Bez buke. Bez gužve.',
       items: [
         'Ograničen broj članica',
@@ -201,13 +201,14 @@ const content = {
       kicker: 'ÉLAN APP',
       title: 'Zakazivanje uvek pri ruci.',
       text: 'Raspored treninga ostaje pregledan i jednostavan, uz diskretan pristup terminima i promenama kada je to potrebno.',
-      stepsTitle: 'Zakazivanje u nekoliko koraka.',
+      stepsTitle: 'Zakazivanje u nekoliko koraka:',
       steps: [
         'Preuzmite aplikaciju.',
-        'Skenirajte QR kod u aplikaciji kako biste započeli registraciju.',
+        'Otvorite aplikaciju i skenirajte QR kod kako biste započeli registraciju.',
         'Kreirajte svoj nalog i upravljajte terminima jednostavno i u svakom trenutku.',
       ],
       codeLabel: 'Pređi za scan',
+      mobileCodeLabel: 'Klik za QR kod',
       links: [
         {
           label: 'App Store',
@@ -476,13 +477,14 @@ const content = {
       kicker: 'ÉLAN APP',
       title: 'Scheduling, always within reach.',
       text: 'Your training schedule stays clear and simple, with discreet access to appointments and changes when needed.',
-      stepsTitle: 'Scheduling in a few steps.',
+      stepsTitle: 'Scheduling in a few steps:',
       steps: [
         'Download the app.',
-        'Scan the QR code in the app to start registration.',
+        'Open the app and scan the QR code to start registration.',
         'Create your account and manage appointments simply, anytime.',
       ],
       codeLabel: 'Hover to scan',
+      mobileCodeLabel: 'Click for QR code',
       links: [
         {
           label: 'App Store',
@@ -604,6 +606,7 @@ export default function Home() {
   const [submitState, setSubmitState] = useState('idle');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPromoOpen, setIsPromoOpen] = useState(false);
+  const [isBookingCodeOpen, setIsBookingCodeOpen] = useState(false);
   const [promoDismissed, setPromoDismissed] = useState(false);
   const [promoSubmitState, setPromoSubmitState] = useState('idle');
   const [promoSource, setPromoSource] = useState('elan-free-training-popup');
@@ -859,6 +862,10 @@ export default function Home() {
       setPromoSubmitState('success');
       promoCloseTimeout.current = window.setTimeout(closePromoPopup, 1800);
     }
+  };
+  const handleMobileBookingCodeClick = (event) => {
+    event.preventDefault();
+    setIsBookingCodeOpen((current) => !current);
   };
   const handleBookingCodeClick = (event) => {
     event.preventDefault();
@@ -1137,16 +1144,17 @@ export default function Home() {
                   <div className="booking-app__mobile-step-body">
                     <p>{copy.bookingApp.steps[1]}</p>
                     <a
-                      className="booking-app__code booking-app__code--mobile"
+                      className={`booking-app__code booking-app__code--mobile${isBookingCodeOpen ? ' is-open' : ''}`}
                       href="#"
-                      onClick={handleBookingCodeClick}
+                      onClick={handleMobileBookingCodeClick}
+                      aria-expanded={isBookingCodeOpen}
                       aria-label={copy.bookingApp.codeLabel}
                     >
                       <img src={`${assetBasePath}/images/app_img_01.png`} alt="" />
                       <span>
                         <img src={`${assetBasePath}/images/ELAN_QR_Code.png`} alt="" />
                       </span>
-                      <small>{copy.bookingApp.codeLabel}</small>
+                      <small>{copy.bookingApp.mobileCodeLabel}</small>
                     </a>
                   </div>
                 </li>
@@ -1295,9 +1303,9 @@ export default function Home() {
           <p className="section-kicker">{copy.application.kicker}</p>
           <h2>{copy.application.title}</h2>
           <p>
-            <strong>{copy.application.text}</strong>
+            {copy.application.text}
+            {copy.application.note ? ` ${copy.application.note}` : ''}
           </p>
-          {copy.application.note ? <p>{copy.application.note}</p> : null}
         </div>
         <form
           className="application-form"

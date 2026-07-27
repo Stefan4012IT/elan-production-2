@@ -2385,14 +2385,6 @@ h3 {
     justify-self: start;
     min-height: 360px;
 
-    span {
-      display: none;
-    }
-
-    small {
-      display: none;
-    }
-
     &:hover,
     &:focus-visible {
       transform: none;
@@ -2408,6 +2400,33 @@ h3 {
     margin-left: -42px;
     width: calc(100% + 42px);
     margin-top: 2px;
+
+    &:not(.is-open):hover,
+    &:not(.is-open):focus-visible {
+      span {
+        opacity: 0;
+        transform: scale(1.015);
+      }
+
+      > img {
+        filter: none;
+        transform: none;
+      }
+    }
+
+    &.is-open {
+      border-color: var(--white);
+
+      span {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      > img {
+        filter: brightness(0.7);
+        transform: scale(1.035);
+      }
+    }
   }
 
   .site-footer__details {
