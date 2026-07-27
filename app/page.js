@@ -33,7 +33,7 @@ const content = {
       items: [
         {
           eyebrow: 'Limited Membership',
-          title: 'Ograničen broj članica',
+          title: 'Ograničen broj članica.',
           text: 'Broj članica je namerno ograničen kako bi prostor ostao miran, pregledan i posvećen kvalitetu rada.',
         },
         {
@@ -162,7 +162,7 @@ const content = {
     },
     earlyAccess: {
       kicker: 'Članstvo',
-      title: 'Ograničen broj članica',
+      title: 'Ograničen broj članica.',
       intro: 'Verujemo da kvalitet treninga počinje kvalitetom okruženja. Kako bismo svakoj članici pružili pažnju koju zaslužuje broj članova je ograničen.',
       text: null,
       note: null,
@@ -171,7 +171,7 @@ const content = {
     },
     space: {
       kicker: 'PROSTOR',
-      title: 'Moderno dizajnirano okruženje za efikasan trening',
+      title: 'Moderno dizajnirano okruženje za efikasan trening.',
       text: 'Svaki detalj prostora pažljivo je biran kako bi stvorio okruženje koje inspiriše disciplinu, fokus i doslednost. Minimalistički enterijer, premium oprema i atmosfera koja omogućava da trening bude upravo ono što treba da bude — vreme posvećeno sebi.',
       panel: 'Boutique Training Environment',
     },
@@ -201,6 +201,7 @@ const content = {
       kicker: 'ÉLAN APP',
       title: 'Zakazivanje uvek pri ruci.',
       text: 'Raspored treninga ostaje pregledan i jednostavan, uz diskretan pristup terminima i promenama kada je to potrebno.',
+      stepsTitle: 'Zakazivanje u nekoliko koraka.',
       steps: [
         'Preuzmite aplikaciju.',
         'Skenirajte QR kod u aplikaciji kako biste započeli registraciju.',
@@ -220,7 +221,7 @@ const content = {
     },
     membershipNote: {
       kicker: 'Članstvo',
-      title: 'Ograničen broj članica',
+      title: 'Ograničen broj članica.',
       intro: 'Članstvo kreirano prema vašim ciljevima, tempu i napretku.',
       text:
         'Verujemo da kvalitet treninga počinje kvalitetom okruženja i zbog toga je broj članova ograničen. Članstvo je dostupno putem prijave.',
@@ -246,13 +247,13 @@ const content = {
       error: 'Slanje trenutno nije uspelo.',
     },
     promoPopup: {
-      kicker: 'Dobro došli.',
-      title: 'VAŠ ÉLAN POČINJE OVDE.',
+      kicker: 'ÉLAN je osećaj.',
+      title: 'Pozivamo Vas da ga doživite.',
       text: [
-        'Pre nego što postanete član, pozivamo Vas da doživite kako izgleda trening u prostoru gde je fokus isključivo na Vama.',
-        'Mirnije okruženje. Manje ljudi. Više pažnje.',
+        'Pažljivo osmišljen prostor za žene, u kojem se privatnost, individualan pristup i stručno vođenje spajaju u iskustvo kojem ćete se rado vraćati.',
+        'Rezervišite svoj termin upoznavanja bez naknade.',
       ],
-      highlight: 'Prijavite se za besplatan uvodni trening i upoznajte ÉLAN pristup.',
+      highlight: 'VAŠ ÉLAN POČINJE OVDE.',
       name: 'Ime',
       email: 'Email',
       phone: 'Telefon',
@@ -307,7 +308,7 @@ const content = {
       items: [
         {
           eyebrow: 'Limited Membership',
-          title: 'Limited number of members',
+          title: 'Limited number of members.',
           text: 'Membership is intentionally limited so the space stays calm, focused and dedicated to training quality.',
         },
         {
@@ -436,7 +437,7 @@ const content = {
     },
     earlyAccess: {
       kicker: 'Membership',
-      title: 'Limited Membership',
+      title: 'Limited Membership.',
       intro: 'We believe training quality begins with the quality of the environment. To give every member the attention she deserves, the number of memberships is limited.',
       text: null,
       note: null,
@@ -475,6 +476,7 @@ const content = {
       kicker: 'ÉLAN APP',
       title: 'Scheduling, always within reach.',
       text: 'Your training schedule stays clear and simple, with discreet access to appointments and changes when needed.',
+      stepsTitle: 'Scheduling in a few steps.',
       steps: [
         'Download the app.',
         'Scan the QR code in the app to start registration.',
@@ -494,7 +496,7 @@ const content = {
     },
     membershipNote: {
       kicker: 'Membership',
-      title: 'Limited Membership',
+      title: 'Limited Membership.',
       intro: 'Memberships designed around your goals, schedule and progress.',
       text:
         'We believe training quality begins with the quality of the environment. That is why the number of members is limited. Membership is available by application.',
@@ -520,13 +522,13 @@ const content = {
       error: 'Sending is currently unavailable.',
     },
     promoPopup: {
-      kicker: 'Welcome to ÉLAN.',
-      title: 'YOUR ÉLAN BEGINS HERE.',
+      kicker: 'ÉLAN is a feeling.',
+      title: 'We invite you to experience it.',
       text: [
-        'Before becoming a member, we invite you to experience what training feels like in a space where the focus is entirely on you.',
-        'A calmer environment. Fewer people. More attention.',
+        'A thoughtfully designed space for women, where privacy, an individual approach and expert guidance come together in an experience you will want to return to.',
+        'Reserve your introductory appointment at no charge.',
       ],
-      highlight: 'Apply for a free introductory session and discover the ÉLAN approach.',
+      highlight: 'YOUR ÉLAN BEGINS HERE.',
       name: 'Name',
       email: 'Email',
       phone: 'Phone',
@@ -1112,6 +1114,7 @@ export default function Home() {
               ))}
             </div>
             <div className="booking-app__mobile-flow">
+              <h3>{copy.bookingApp.stepsTitle}</h3>
               <ol className="booking-app__mobile-steps">
                 <li>
                   <div className="booking-app__mobile-step-body">
