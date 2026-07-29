@@ -7,7 +7,7 @@ const content = {
     nav: {
       club: 'Klub',
       training: 'Trening',
-      app: 'App',
+      app: 'Aplikacija',
       membership: 'Članstvo',
       apply: 'Prijava',
       label: 'Glavna navigacija',
@@ -198,7 +198,7 @@ const content = {
       ],
     },
     bookingApp: {
-      kicker: 'ÉLAN APP',
+      kicker: 'ÉLAN aplikacija',
       title: 'Zakazivanje uvek pri ruci.',
       text: 'Raspored treninga ostaje pregledan i jednostavan, uz diskretan pristup terminima i promenama kada je to potrebno.',
       stepsTitle: 'Zakazivanje u nekoliko koraka:',
@@ -623,6 +623,9 @@ export default function Home() {
   const membershipImage = `url('${assetBasePath}/images/membership_img.png')`;
   const applicationImage = `url('${assetBasePath}/images/application_002.png')`;
   const promoImage = `url('${assetBasePath}/images/training-concept__image_001.png')`;
+  const promoKickerParts = copy.promoPopup.kicker.split(' ');
+  const promoKickerBrand = promoKickerParts[0];
+  const promoKickerRest = promoKickerParts.slice(1).join(' ');
   const spaceSlides = [
     {
       src: `${assetBasePath}/images/prostor_01.jpeg`,
@@ -1460,7 +1463,10 @@ export default function Home() {
               <span />
             </button>
             <div className="promo-modal__content">
-              <p className="section-kicker">{copy.promoPopup.kicker}</p>
+              <p className="section-kicker">
+                <span>{promoKickerBrand}</span>
+                {promoKickerRest ? ` ${promoKickerRest}` : ''}
+              </p>
               <h2 id="promo-modal-title">{copy.promoPopup.title}</h2>
               {copy.promoPopup.text.map((item) => (
                 <p key={item}>{item}</p>
