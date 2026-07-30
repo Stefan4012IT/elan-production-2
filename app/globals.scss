@@ -803,7 +803,7 @@ h4 {
     border-left: 1px solid var(--border);
   }
 
-  p {
+  .training-concept__card-kicker {
     margin: 0;
     color: var(--accent);
     font-size: var(--label-size);
@@ -813,13 +813,14 @@ h4 {
     text-transform: uppercase;
   }
 
-  h4 {
+  .training-concept__card-copy {
     margin-top: 18px;
-    margin-bottom: 0;
-    font-family: var(--heading-font);
-    font-size: clamp(1.32rem, 2vw, 1.7rem);
-    font-weight: 300;
-    line-height: var(--heading-line-height);
+    color: var(--muted);
+    font-size: var(--body-copy-size);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: var(--copy-line-height);
+    text-transform: none;
   }
 }
 
@@ -2104,7 +2105,7 @@ h4 {
 
   .section-kicker {
     color: #d5bc87;
-    font-size: clamp(1.08rem, 1.5vw, 1.3rem);
+    font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 0.12em;
 
@@ -2300,11 +2301,11 @@ h4 {
     right: 0;
     margin-right: 0;
     border-right: 1px solid var(--border);
-    background-position: 0 0, center;
+    background-position: 0 0, 59% 50%;
   }
 
   .membership__media-content {
-    max-width: 600px;
+    max-width: 250px;
   }
 
   .membership__media-text {

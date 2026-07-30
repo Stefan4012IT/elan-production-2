@@ -8,7 +8,7 @@ const content = {
       club: 'Klub',
       training: 'Trening',
       app: 'Aplikacija',
-      membership: 'Članstvo',
+      membership: 'Paketi',
       apply: 'Prijava',
       label: 'Glavna navigacija',
     },
@@ -95,12 +95,12 @@ const content = {
       items: [
         {
           kicker: 'INDIVIDUALNI PLAN',
-          title: 'Plan treninga kreiran za vas.',
-          text: 'Prilagođen vašim ciljevima, mogućnostima i tempu napretka.',
+          title: 'Plan treninga kreiran za Vas.',
+          text: 'Prilagođen Vašim ciljevima, mogućnostima i tempu napretka.',
         },
         {
           kicker: 'VOĐENI TRENING',
-          title: 'Trening koji prati vaš plan.',
+          title: 'Trening koji prati Vaš plan.',
           text: 'Male grupe, stručno vođenje i individualna pažnja na svakom treningu.',
         },
       ],
@@ -232,7 +232,7 @@ const content = {
       title: 'Vaš ÉLAN počinje ovde.',
       text: 'Svako članstvo počinje upoznavanjem.',
       note:
-        'Podelite sa nama nekoliko osnovnih informacija, a mi ćemo vas kontaktirati kako bismo razgovarali o vašim ciljevima, predstavili ÉLAN koncept i odgovorili na sva pitanja u vezi sa članstvom.',
+        'Podelite sa nama nekoliko osnovnih informacija, a mi ćemo Vas kontaktirati kako bismo razgovarali o Vašim ciljevima, predstavili ÉLAN koncept i odgovorili na sva pitanja u vezi sa članstvom.',
       name: 'Ime',
       email: 'Email',
       phone: 'Telefon',
@@ -252,7 +252,7 @@ const content = {
       title: 'Pozivamo Vas da ga doživite.',
       text: [
         'Pažljivo osmišljen prostor za žene, u kojem se privatnost, individualan pristup i stručno vođenje spajaju u iskustvo kojem ćete se rado vraćati.',
-        'Rezervišite svoj termin upoznavanja bez naknade.',
+        'Rezervišite Vaš termin posete i konsultacije.',
       ],
       highlight: 'VAŠ ÉLAN POČINJE OVDE.',
       name: 'Ime',
@@ -528,7 +528,7 @@ const content = {
       title: 'We invite you to experience it.',
       text: [
         'A thoughtfully designed space for women, where privacy, an individual approach and expert guidance come together in an experience you will want to return to.',
-        'Reserve your introductory appointment at no charge.',
+        'Reserve your visit and consultation appointment.',
       ],
       highlight: 'YOUR ÉLAN BEGINS HERE.',
       name: 'Name',
@@ -1052,8 +1052,8 @@ export default function Home() {
           <div className="training-concept__cards">
             {copy.trainingConcept.items.map((item) => (
               <article className="training-concept__card" key={item.kicker}>
-                <p>{item.kicker}</p>
-                <h4>{item.text}</h4>
+                <p className="training-concept__card-kicker">{item.kicker}</p>
+                <p className="training-concept__card-copy">{item.text}</p>
               </article>
             ))}
           </div>
