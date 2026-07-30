@@ -239,7 +239,7 @@ const content = {
       focus: 'Izaberite trening paket',
       focusPlaceholder: 'Nisam još odlučila',
       cta: 'Prijavite se za članstvo',
-      submit: 'Prijavite se za članstvo',
+      submit: 'Prijavite se',
       success: 'Prijava je poslata.',
       successTitle: 'Prijava je primljena.',
       successText:
@@ -515,7 +515,7 @@ const content = {
       focus: 'Choose a training package',
       focusPlaceholder: 'I have not decided yet',
       cta: 'Apply for membership',
-      submit: 'Apply for membership',
+      submit: 'Apply',
       success: 'Your application has been sent.',
       successTitle: 'Application received.',
       successText:
