@@ -109,9 +109,9 @@ const content = {
       kicker: 'Rane prijave',
       title: 'Treniraj sada. Zadrži svoju cenu cele godine.',
       note:
-        'Elan već živi svoj letnji ritam — treninzi su u toku, a prve članice imaju pristup posebnim Early Access uslovima pre zvaničnog otvaranja, 15. septembra 2026.',
+        'Elan već živi svoj letnji ritam — treninzi su u toku, a prve članice imaju pristup posebnim Early Access uslovima pre zvaničnog otvaranja, 30. septembra 2026.',
       detail:
-        'Paket koji izabereš sada zaključava promotivnu cenu tokom celog perioda tvoje članarine. Od 15. septembra važi zvanični cenovnik, a broj Early Access članstava je ograničen.',
+        'Paket koji izabereš sada zaključava promotivnu cenu tokom celog perioda tvoje članarine. Od 30. septembra važi zvanični cenovnik, a broj Early Access članstava je ograničen.',
       highlights:
         'Obezbedi svoj Elan Membership na vreme i postani deo zajednice koja kreće prva.',
       packagesLabel: 'Paketi',
@@ -120,8 +120,8 @@ const content = {
         kicker: 'RANE PRIJAVE',
         title: 'Trenirajte sada. Zadržite posebnu cenu cele godine.',
         text: [
-          'Elan već živi svoj letnji ritam — treninzi su u toku, a prve članice imaju pristup posebnim uslovima pre zvaničnog otvaranja, 15. septembra 2026.',
-          'Članstvo aktivirano u ovom periodu zadržava početnu cenu tokom celog perioda aktivne članarine. Od 15. septembra važiće novi cenovnik.',
+          'Elan već živi svoj letnji ritam — treninzi su u toku, a prve članice imaju pristup posebnim uslovima pre zvaničnog otvaranja, 30. septembra 2026.',
+          'Članstvo aktivirano u ovom periodu zadržava početnu cenu tokom celog perioda aktivne članarine. Od 30. septembra važiće novi cenovnik.',
           'Broj članstava je ograničen kako bismo svakoj članici pružili pažnju koju zaslužuje.',
         ],
         highlight:
