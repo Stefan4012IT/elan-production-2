@@ -36,6 +36,7 @@ jobs:
 
       - name: Build static site
         env:
+          NEXT_PUBLIC_BASE_PATH: /elan-production-2
           NEXT_PUBLIC_LEADS_WEB_APP_URL: ${{ secrets.NEXT_PUBLIC_LEADS_WEB_APP_URL }}
         run: npm run build
 
