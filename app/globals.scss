@@ -732,7 +732,7 @@ h4 {
   left: calc((100vw - min(var(--max), calc(100vw - 40px))) / -2);
   background-image:
     linear-gradient(rgba(31, 29, 27, 0.03), rgba(31, 29, 27, 0.05)),
-    url('#{$asset-prefix}/images/elan-img-2.png');
+    var(--ease-left-image, url('/images/elan-img-2.png'));
   background-position: right center;
   box-shadow: none;
 
@@ -745,7 +745,7 @@ h4 {
   right: calc((100vw - min(var(--max), calc(100vw - 40px))) / -2);
   background-image:
     linear-gradient(rgba(243, 240, 235, 0.03), rgba(31, 29, 27, 0.05)),
-    url('#{$asset-prefix}/images/elan-img-3.png');
+    var(--ease-right-image, url('/images/elan-img-3.png'));
   background-position: right center;
 }
 
@@ -765,7 +765,7 @@ h4 {
   border: 1px solid var(--border);
   background:
     linear-gradient(rgba(31, 29, 27, 0.04), rgba(31, 29, 27, 0.08)),
-    url('#{$asset-prefix}/images/training-concept__image_002.png') center / cover;
+    var(--training-concept-image, url('/images/training-concept__image_002.png')) center / cover;
 }
 
 .training-concept__image--mobile {

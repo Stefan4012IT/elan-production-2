@@ -623,6 +623,9 @@ export default function Home() {
   const membershipImage = `url('${assetBasePath}/images/membership_img.png')`;
   const applicationImage = `url('${assetBasePath}/images/application_002.png')`;
   const promoImage = `url('${assetBasePath}/images/training-concept__image_001.png')`;
+  const easeLeftImage = `url('${assetBasePath}/images/elan-img-2.png')`;
+  const easeRightImage = `url('${assetBasePath}/images/elan-img-3.png')`;
+  const trainingConceptImage = `url('${assetBasePath}/images/training-concept__image_002.png')`;
   const promoKickerParts = copy.promoPopup.kicker.split(' ');
   const promoKickerBrand = promoKickerParts[0];
   const promoKickerRest = promoKickerParts.slice(1).join(' ');
@@ -882,6 +885,9 @@ export default function Home() {
         '--membership-image': membershipImage,
         '--application-image': applicationImage,
         '--promo-image': promoImage,
+        '--ease-left-image': easeLeftImage,
+        '--ease-right-image': easeRightImage,
+        '--training-concept-image': trainingConceptImage,
         '--header-tagline':
           language === 'sr' ? '"VAŠ ÉLAN POČINJE OVDE."' : '"Members move in silence"',
       }}

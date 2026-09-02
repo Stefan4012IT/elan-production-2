@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  assetPrefix: '.',
   images: {
     unoptimized: true,
   },
   env: {
-    NEXT_PUBLIC_BASE_PATH: '',
+    NEXT_PUBLIC_BASE_PATH: '.',
   },
   sassOptions: {
     additionalData: '$asset-prefix: "";',
