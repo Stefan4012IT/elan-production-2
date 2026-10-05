@@ -1048,9 +1048,7 @@ h4 {
 }
 
 .membership__media-content {
-  position: relative;
-  z-index: 1;
-  max-width: 350px;
+  display: none;
 
   .section-kicker {
     color: #d5bc87;
@@ -2304,6 +2302,10 @@ h4 {
     background-position: 0 0, 59% 50%;
   }
 
+  .membership__media {
+    min-height: 420px;
+  }
+
   .membership__media-content {
     max-width: 250px;
   }
@@ -2767,8 +2769,7 @@ h4 {
   }
 
   .membership__media {
-    min-height: 520px;
-    padding: 28px 20px;
+    display: none;
   }
 
   .feature-grid {

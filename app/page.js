@@ -15,7 +15,7 @@ const content = {
     hero: {
       eyebrow: 'VIŠE OD TRENINGA',
       title: 'Snaga, gracioznost, disciplina.',
-      text: 'ÉLAN je privatni prostor za trening namenjen ženama koje žele da grade snagu u mirnom, fokusiranom i prefinjenom okruženju.',
+      text: 'ÉLAN je privatna teretana zatvorenog tipa namenjena ženama koje žele da grade snagu u mirnom, fokusiranom i prefinjenom okruženju.',
       primary: 'Saznajte više',
       secondary: null,
     },
@@ -904,7 +904,7 @@ export default function Home() {
             src={`${assetBasePath}/images/ELAN_logo_black.png`}
             alt="ÉLAN"
           />
-          <span className="brand-descriptor">Women’s Private Gym</span>
+          <span className="brand-descriptor">Women's Fitness Studio</span>
         </a>
         <div
           className={`header-actions ${isMenuOpen ? 'is-open' : ''}`}
