@@ -1077,10 +1077,8 @@ export default function Home() {
       </section>
 
       <section className="booking-policy section-shell">
-        <div className="booking-policy__intro">
-          <p className="section-kicker">{copy.bookingPolicy.kicker}</p>
-          <h2>{copy.bookingPolicy.title}</h2>
-        </div>
+        <p className="section-kicker booking-policy__eyebrow">{copy.bookingPolicy.kicker}</p>
+        <h2 className="booking-policy__title">{copy.bookingPolicy.title}</h2>
         <div className="booking-policy__body">
           {copy.bookingPolicy.items.map((item) => (
             <p className="booking-policy__item" key={item}>{item}</p>
