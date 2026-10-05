@@ -117,17 +117,10 @@ const content = {
       packagesLabel: 'Paketi',
       packagesNote: 'Svi paketi važe 30 dana.',
       imagePromo: {
-        kicker: 'RANE PRIJAVE',
-        title: 'Trenirajte sada. Zadržite posebnu cenu cele godine.',
-        text: [
-          'Elan već živi svoj letnji ritam — treninzi su u toku, a prve članice imaju pristup posebnim uslovima pre zvaničnog otvaranja, 30. septembra 2026.',
-          'Članstvo aktivirano u ovom periodu zadržava početnu cenu tokom celog perioda aktivne članarine. Od 30. septembra važiće novi cenovnik.',
-          'Broj članstava je ograničen kako bismo svakoj članici pružili pažnju koju zaslužuje.',
-        ],
-        highlight:
-          'Članstvo aktivirano u ovom periodu zadržava početnu cenu tokom celog perioda aktivne članarine.',
-        benefits: [],
-        cta: 'Prijavite se za članstvo',
+        title: 'Vaš trening. Vaš ritam.',
+        lead: 'Kontinuitet počinje ritmom koji odgovara Vama.',
+        text: 'Odaberite 8, 10 ili 12 treninga tokom 30 dana, u skladu sa svojim ciljevima, rasporedom i načinom života. Vi birate dinamiku, a svaki trening prati Vaš individualni plan.',
+        cta: 'Prijavite se',
       },
       items: [
         {
@@ -192,8 +185,7 @@ const content = {
       title: 'Planirano. Fleksibilno. Jednostavno.',
       items: [
         'Vaši termini rezervišu se prilikom učlanjenja, u skladu sa Vašim rasporedom i ritmom života.',
-        'Ukoliko niste u mogućnosti da prisustvujete treningu, termin možete blagovremeno otkazati putem aplikacije.',
-        'Blagovremeno otkazani trening ostaje Vam na raspolaganju i možete ga nadoknaditi u prvom dostupnom terminu kod svog trenera.',
+        'Ukoliko poželite da promenite zakazani termin, to možete jednostavno učiniti putem aplikacije. Otkazivanjem najmanje 24 sata unapred, trening ostaje Vam na raspolaganju za nadoknadu u prvom slobodnom terminu kod Vašeg trenera.',
         'Na taj način omogućavamo Vam veću fleksibilnost, uz organizaciju koja obezbeđuje kontinuitet i kvalitet svakog treninga.',
       ],
     },
@@ -393,17 +385,10 @@ const content = {
       packagesLabel: 'Packages',
       packagesNote: 'All packages are valid for 30 days.',
       imagePromo: {
-        kicker: 'EARLY APPLICATIONS',
-        title: 'Train now. Keep your special price all year.',
-        text: [
-          'Elan is already moving in its summer rhythm. Training sessions are underway, and the first members have access to special terms before the official opening on September 15, 2026.',
-          'Membership activated during this period keeps its starting price for the full duration of the active membership. From September 15, a new price list will apply.',
-          'The number of memberships is limited so we can give every member the attention she deserves.',
-        ],
-        highlight:
-          'Membership activated during this period keeps its starting price for the full duration of the active membership.',
-        benefits: [],
-        cta: 'Apply for membership',
+        title: 'Your training. Your rhythm.',
+        lead: 'Consistency begins with a rhythm that works for you.',
+        text: 'Choose 8, 10 or 12 sessions over 30 days to suit your goals, schedule and lifestyle. You set the pace, and every session follows your individual plan.',
+        cta: 'Apply',
       },
       items: [
         {
@@ -468,8 +453,7 @@ const content = {
       title: 'Planned. Flexible. Simple.',
       items: [
         'Your appointments are reserved upon joining, in line with your schedule and rhythm of life.',
-        'If you are unable to attend training, you can cancel the appointment in time through the app.',
-        'A training session cancelled in time remains available to you and can be made up in the first available slot with your trainer.',
+        'If you would like to change a scheduled session, you can easily do so through the app. Cancel at least 24 hours in advance, and the session remains available to make up in the first open slot with your trainer.',
         'This gives you greater flexibility, with organisation that preserves continuity and the quality of every training session.',
       ],
     },
@@ -1261,31 +1245,11 @@ export default function Home() {
           <div className="membership__media">
             <div className="membership__image" aria-hidden="true" />
             <div className="membership__media-content">
-              <p className="section-kicker">{copy.membership.imagePromo.kicker}</p>
               <h3>{copy.membership.imagePromo.title}</h3>
               <div className="membership__media-text">
-                {copy.membership.imagePromo.text.map((item) => {
-                  const highlight = copy.membership.imagePromo.highlight;
-
-                  if (highlight && item.startsWith(highlight)) {
-                    return (
-                      <p key={item}>
-                        <strong>{highlight}</strong>
-                        {item.slice(highlight.length)}
-                      </p>
-                    );
-                  }
-
-                  return <p key={item}>{item}</p>;
-                })}
+                <p><strong>{copy.membership.imagePromo.lead}</strong></p>
+                <p>{copy.membership.imagePromo.text}</p>
               </div>
-              {copy.membership.imagePromo.benefits.length ? (
-                <ul>
-                  {copy.membership.imagePromo.benefits.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              ) : null}
               <a className="button button--dark" href="#apply">
                 {copy.membership.imagePromo.cta}
               </a>

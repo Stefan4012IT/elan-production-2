@@ -1012,7 +1012,7 @@ h4 {
   position: relative;
   min-height: 100%;
   display: grid;
-  align-items: start;
+  align-items: center;
   overflow: visible;
   padding: clamp(28px, 4vw, 46px);
   color: var(--white);
@@ -1048,11 +1048,9 @@ h4 {
 }
 
 .membership__media-content {
-  display: none;
-
-  .section-kicker {
-    color: #d5bc87;
-  }
+  position: relative;
+  z-index: 1;
+  max-width: 350px;
 
   h3 {
     max-width: 520px;
@@ -1061,23 +1059,6 @@ h4 {
     font-weight: 300;
     font-size: clamp(1.65rem, 3vw, 2.65rem);
     line-height: var(--heading-line-height);
-  }
-
-  ul {
-    display: grid;
-    gap: 10px;
-    margin: 24px 0 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  li {
-    color: rgba(251, 250, 247, 0.78);
-    font-size: var(--label-size);
-    font-weight: 700;
-    letter-spacing: 0.13em;
-    line-height: 1.35;
-    text-transform: uppercase;
   }
 
   .button {
@@ -1243,22 +1224,17 @@ h4 {
 }
 
 .booking-policy__body {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-  border-top: 1px solid var(--border);
-  border-left: 1px solid var(--border);
+  max-width: 720px;
 }
 
 .booking-policy__item {
-  min-height: auto;
   margin: 0;
-  padding: 18px clamp(20px, 3vw, 30px);
-  border-right: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  background: rgba(251, 250, 247, 0.26);
   color: var(--muted);
-  font-size: var(--detail-copy-size);
+  font-size: var(--body-copy-size);
+}
+
+.booking-policy__item + .booking-policy__item {
+  margin-top: 18px;
 }
 
 .booking-app {
@@ -2409,16 +2385,6 @@ h4 {
     grid-template-columns: 1fr;
   }
 
-  .booking-policy__body {
-    grid-template-columns: 1fr;
-    border-inline: 1px solid var(--border);
-  }
-
-  .booking-policy__item {
-    min-height: auto;
-    padding: 20px;
-  }
-
   .booking-app__steps--desktop,
   .booking-app__links--desktop,
   .booking-app__code--desktop {
@@ -2742,10 +2708,6 @@ h4 {
     gap: 24px;
   }
 
-  .booking-policy__body {
-    grid-template-columns: 1fr;
-  }
-
   .section-shell {
     padding-top: var(--mobile-section-y);
     padding-bottom: var(--mobile-section-y);
@@ -2769,7 +2731,12 @@ h4 {
   }
 
   .membership__media {
-    display: none;
+    min-height: 520px;
+    padding: 28px 20px;
+  }
+
+  .membership__media-content {
+    max-width: 61%;
   }
 
   .feature-grid {
