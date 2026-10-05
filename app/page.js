@@ -266,7 +266,7 @@ const content = {
       focus: 'besplatan trening',
     },
     footer: {
-      line: ['Women’s Private Gym', 'Focus · Discipline · Strength'],
+      line: ["Women's Fitness Studio", 'Focus · Discipline · Strength'],
       addressLabel: 'Lokacija',
       address: ['Ivankovačka 6', 'Beograd'],
       addressHref:
@@ -542,7 +542,7 @@ const content = {
       focus: 'besplatan trening',
     },
     footer: {
-      line: ['Women’s Private Gym', 'Focus · Discipline · Strength'],
+      line: ["Women's Fitness Studio", 'Focus · Discipline · Strength'],
       addressLabel: 'Location',
       address: ['Ivankovačka 6', 'Beograd'],
       addressHref:
